@@ -11,6 +11,8 @@
 
 
 
+
+
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2670,7 +2672,9 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 2 3
-# 6 "lcd.c" 2
+# 8 "lcd.c" 2
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdbool.h" 1 3
+# 9 "lcd.c" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdio.h" 1 3
 # 24 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdio.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/bits/alltypes.h" 1 3
@@ -2823,7 +2827,7 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 7 "lcd.c" 2
+# 10 "lcd.c" 2
 # 1 "./i2c.h" 1
 # 24 "./i2c.h"
 void I2C_Init_Master(unsigned char sp_i2c);
@@ -2834,43 +2838,7 @@ void I2C_Ack(void);
 void I2C_Nack(void);
 unsigned char I2C_Read(void);
 uint8_t I2C_Write(char data);
-# 8 "lcd.c" 2
-# 1 "./ds1307.h" 1
-# 22 "./ds1307.h"
-void DS1307_Init(void);
-
-
-
-
-
-
-
-void DS1307_SetDate(uint8_t day, uint8_t month, uint8_t year);
-
-
-
-
-
-
-
-void DS1307_SetTime(uint8_t hour, uint8_t min, uint8_t sec);
-
-
-
-
-
-
-
-void DS1307_GetDate(uint8_t *day, uint8_t *month, uint8_t *year);
-
-
-
-
-
-
-
-void DS1307_GetTime(uint8_t *hour, uint8_t *min, uint8_t *sec);
-# 9 "lcd.c" 2
+# 11 "lcd.c" 2
 # 1 "./lcd_i2c.h" 1
 # 11 "./lcd_i2c.h"
 void Lcd_Init(void);
@@ -2885,7 +2853,12 @@ void Lcd_Blink(void);
 void Lcd_NoBlink(void);
 void Lcd_CGRAM_WriteChar(char n);
 void Lcd_CGRAM_CreateChar(char pos, const char* new_char);
-# 10 "lcd.c" 2
+# 12 "lcd.c" 2
+# 1 "./dht11.h" 1
+# 22 "./dht11.h"
+void dht11_config (void);
+uint8_t dht11_read (float *phum, float *ptemp);
+# 13 "lcd.c" 2
 
 #pragma config FOSC = HS
 #pragma config WDTE = OFF
@@ -2897,68 +2870,99 @@ void Lcd_CGRAM_CreateChar(char pos, const char* new_char);
 #pragma config IESO = OFF
 #pragma config FCMEN = OFF
 #pragma config LVP = OFF
-#pragma config BOR4V = BOR40V
-#pragma config WRT = OFF
+#pragma config DEBUG = OFF
 
 
 
-void main(void)
+
+char buffer_tem[16];
+char buffer_hum[16];
+
+void float_to_string_opt(float value, char* buffer) {
+    int parte_entera;
+    int parte_decimal;
+
+
+    if (value < 0) value = -value;
+
+    parte_entera = (int)value;
+
+
+    parte_decimal = (int)((value * 10.0) - (parte_entera * 10));
+
+    sprintf(buffer, "%d.%d", parte_entera, parte_decimal);
+}
+
+int main(void)
 {
-    uint8_t hora, min, seg;
-    uint8_t dia, mes, ano;
-    char linea1[17];
-    char linea2[17];
+    float tem, hum;
+    uint8_t intentos = 0;
 
 
     ANSEL = 0x00;
     ANSELH = 0x00;
 
-    _delay((unsigned long)((500)*(20000000/4000.0)));
-
 
     I2C_Init_Master(0x80);
     _delay((unsigned long)((100)*(20000000/4000.0)));
 
-
     Lcd_Init();
-    _delay((unsigned long)((100)*(20000000/4000.0)));
+    _delay((unsigned long)((50)*(20000000/4000.0)));
 
 
-    Lcd_Clear();
-    Lcd_Set_Cursor(1, 1);
-    Lcd_Write_String("  Iniciando...  ");
-    _delay((unsigned long)((1000)*(20000000/4000.0)));
+    dht11_config();
 
 
-    DS1307_Init();
-    _delay((unsigned long)((100)*(20000000/4000.0)));
+    Lcd_Set_Cursor(2,1);
+    Lcd_Write_String(" Hold on...");
+    _delay((unsigned long)((2000)*(20000000/4000.0)));
+
+    while(1) {
+        if(dht11_read(&hum, &tem)) {
+
+            intentos = 0;
+
+            float_to_string_opt(tem, buffer_tem);
+            float_to_string_opt(hum, buffer_hum);
+
+            Lcd_Clear();
+            _delay((unsigned long)((2)*(20000000/4000.0)));
 
 
+            Lcd_Set_Cursor(1, 1);
+            _delay((unsigned long)((50)*(20000000/4000000.0)));
+            Lcd_Write_String("Temp: ");
+            Lcd_Write_String(buffer_tem);
+            Lcd_Write_Char(' ');
+            Lcd_Write_Char('C');
 
 
-    DS1307_SetTime(12, 0, 0);
-    DS1307_SetDate(29, 10, 24);
+            Lcd_Set_Cursor(1, 2);
+            _delay((unsigned long)((50)*(20000000/4000000.0)));
+            Lcd_Write_String("Hum : ");
+            Lcd_Write_String(buffer_hum);
+            Lcd_Write_Char(' ');
+            Lcd_Write_Char('%');
+
+        } else {
+
+            intentos++;
+
+            Lcd_Clear();
+            Lcd_Set_Cursor(1,1);
+            Lcd_Write_String(" Error DHT11");
+            Lcd_Set_Cursor(2,1);
+
+            if(intentos < 3) {
+                Lcd_Write_String(" Reintentando..");
+            } else {
+                Lcd_Write_String(" Check conexion");
+            }
+        }
 
 
-    Lcd_Clear();
-
-
-    while(1)
-    {
-
-        DS1307_GetTime(&hora, &min, &seg);
-        DS1307_GetDate(&dia, &mes, &ano);
-
-
-        Lcd_Set_Cursor(1, 1);
-        sprintf(linea1, "Hora: %02d:%02d:%02d", hora, min, seg);
-        Lcd_Write_String(linea1);
-
-
-        Lcd_Set_Cursor(2, 1);
-        sprintf(linea2, "Fecha:%02d/%02d/%02d", dia, mes, ano);
-        Lcd_Write_String(linea2);
-
-        _delay((unsigned long)((1000)*(20000000/4000.0)));
+        _delay((unsigned long)((2500)*(20000000/4000.0)));
     }
+
+    return 0;
 }
