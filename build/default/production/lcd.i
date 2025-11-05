@@ -2673,6 +2673,8 @@ extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 2 3
 # 8 "lcd.c" 2
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdbool.h" 1 3
+# 9 "lcd.c" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdio.h" 1 3
 # 24 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdio.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/bits/alltypes.h" 1 3
@@ -2825,7 +2827,7 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 9 "lcd.c" 2
+# 10 "lcd.c" 2
 # 1 "./i2c.h" 1
 # 24 "./i2c.h"
 void I2C_Init_Master(unsigned char sp_i2c);
@@ -2836,14 +2838,6 @@ void I2C_Ack(void);
 void I2C_Nack(void);
 unsigned char I2C_Read(void);
 uint8_t I2C_Write(char data);
-# 10 "lcd.c" 2
-# 1 "./ds1307.h" 1
-# 11 "./ds1307.h"
-void ds1307_init(void);
-void ds1307_set_date(uint8_t day, uint8_t month, uint8_t year);
-void ds1307_set_time(uint8_t hour, uint8_t min, uint8_t sec);
-void ds1307_get_date(uint8_t *day, uint8_t *month, uint8_t *year);
-void ds1307_get_time(uint8_t *hour, uint8_t *min, uint8_t *sec);
 # 11 "lcd.c" 2
 # 1 "./lcd_i2c.h" 1
 # 11 "./lcd_i2c.h"
@@ -2866,7 +2860,6 @@ void dht11_config (void);
 uint8_t dht11_read (float *phum, float *ptemp);
 # 13 "lcd.c" 2
 
-
 #pragma config FOSC = HS
 #pragma config WDTE = OFF
 #pragma config PWRTE = ON
@@ -2877,123 +2870,99 @@ uint8_t dht11_read (float *phum, float *ptemp);
 #pragma config IESO = OFF
 #pragma config FCMEN = OFF
 #pragma config LVP = OFF
-#pragma config BOR4V = BOR40V
-#pragma config WRT = OFF
+#pragma config DEBUG = OFF
 
 
 
-void main(void)
+
+char buffer_tem[16];
+char buffer_hum[16];
+
+void float_to_string_opt(float value, char* buffer) {
+    int parte_entera;
+    int parte_decimal;
+
+
+    if (value < 0) value = -value;
+
+    parte_entera = (int)value;
+
+
+    parte_decimal = (int)((value * 10.0) - (parte_entera * 10));
+
+    sprintf(buffer, "%d.%d", parte_entera, parte_decimal);
+}
+
+int main(void)
 {
-    float temp_f, hum_f;
-    uint8_t hora, min, seg;
-    uint8_t dia, mes, ano;
-    char buffer[17];
-    uint8_t dht_ok = 0;
-
-
-    uint8_t pantalla_actual = 0;
-    uint8_t contador_segundos = 0;
-    uint8_t contador_dht = 0;
+    float tem, hum;
+    uint8_t intentos = 0;
 
 
     ANSEL = 0x00;
     ANSELH = 0x00;
 
-    _delay((unsigned long)((500)*(20000000/4000.0)));
-
 
     I2C_Init_Master(0x80);
     _delay((unsigned long)((100)*(20000000/4000.0)));
 
-
     Lcd_Init();
-    _delay((unsigned long)((100)*(20000000/4000.0)));
-
-    Lcd_Clear();
-    Lcd_Set_Cursor(1, 1);
-    Lcd_Write_String("  Estacion");
-    Lcd_Set_Cursor(1, 2);
-    Lcd_Write_String(" Meteorologica");
-    _delay((unsigned long)((2000)*(20000000/4000.0)));
+    _delay((unsigned long)((50)*(20000000/4000.0)));
 
 
     dht11_config();
-    _delay((unsigned long)((100)*(20000000/4000.0)));
 
 
-    ds1307_init();
-    _delay((unsigned long)((100)*(20000000/4000.0)));
+    Lcd_Set_Cursor(2,1);
+    Lcd_Write_String(" Hold on...");
+    _delay((unsigned long)((2000)*(20000000/4000.0)));
 
-    Lcd_Clear();
-    Lcd_Set_Cursor(1, 1);
-    Lcd_Write_String(" Configurando");
-    Lcd_Set_Cursor(1, 2);
-    Lcd_Write_String(" sistema...");
+    while(1) {
+        if(dht11_read(&hum, &tem)) {
 
+            intentos = 0;
 
-    ds1307_set_time(19, 30, 0);
-    ds1307_set_date(29, 10, 25);
+            float_to_string_opt(tem, buffer_tem);
+            float_to_string_opt(hum, buffer_hum);
 
-    _delay((unsigned long)((1500)*(20000000/4000.0)));
-
-
-    dht_ok = dht11_read(&hum_f, &temp_f);
-
-    Lcd_Clear();
-
-    while(1)
-    {
-        ds1307_get_time(&hora, &min, &seg);
-        ds1307_get_date(&dia, &mes, &ano);
-
-        if(contador_dht >= 3) {
-            dht_ok = dht11_read(&hum_f, &temp_f);
-            contador_dht = 0;
-        }
-        contador_dht++;
-
-        if(contador_segundos >= 5) {
-            pantalla_actual = !pantalla_actual;
-            contador_segundos = 0;
             Lcd_Clear();
             _delay((unsigned long)((2)*(20000000/4000.0)));
-        }
 
-
-        if(pantalla_actual == 0) {
 
             Lcd_Set_Cursor(1, 1);
-            sprintf(buffer, "   %02d:%02d:%02d", hora, min, seg);
-            Lcd_Write_String(buffer);
+            _delay((unsigned long)((50)*(20000000/4000000.0)));
+            Lcd_Write_String("Temp: ");
+            Lcd_Write_String(buffer_tem);
+            Lcd_Write_Char(' ');
+            Lcd_Write_Char('C');
+
 
             Lcd_Set_Cursor(1, 2);
-            sprintf(buffer, " %02d/%02d/20%02d", dia, mes, ano);
-            Lcd_Write_String(buffer);
+            _delay((unsigned long)((50)*(20000000/4000000.0)));
+            Lcd_Write_String("Hum : ");
+            Lcd_Write_String(buffer_hum);
+            Lcd_Write_Char(' ');
+            Lcd_Write_Char('%');
 
         } else {
 
-            Lcd_Set_Cursor(1, 1);
-            if(dht_ok) {
-                int temp_ent = (int)temp_f;
-                int temp_dec = (int)((temp_f - temp_ent) * 10);
-                sprintf(buffer, "Temp: %d.%d C", temp_ent, temp_dec);
-            } else {
-                sprintf(buffer, "Temp: -- C");
-            }
-            Lcd_Write_String(buffer);
+            intentos++;
 
-            Lcd_Set_Cursor(1, 2);
-            if(dht_ok) {
-                int hum_ent = (int)hum_f;
-                int hum_dec = (int)((hum_f - hum_ent) * 10);
-                sprintf(buffer, "Hum : %d.%d %%", hum_ent, hum_dec);
+            Lcd_Clear();
+            Lcd_Set_Cursor(1,1);
+            Lcd_Write_String(" Error DHT11");
+            Lcd_Set_Cursor(2,1);
+
+            if(intentos < 3) {
+                Lcd_Write_String(" Reintentando..");
             } else {
-                sprintf(buffer, "Hum : -- %%");
+                Lcd_Write_String(" Check conexion");
             }
-            Lcd_Write_String(buffer);
         }
 
-        contador_segundos++;
-        _delay((unsigned long)((1000)*(20000000/4000.0)));
+
+        _delay((unsigned long)((2500)*(20000000/4000.0)));
     }
+
+    return 0;
 }

@@ -1,8 +1,8 @@
 
 16F887 Memory Summary:
-    Program space        used  170Dh (  5901) of  2000h words   ( 72.0%)
-    Data space           used    C6h (   198) of   170h bytes   ( 53.8%)
+    Program space        used  119Ah (  4506) of  2000h words   ( 55.0%)
+    Data space           used    B6h (   182) of   170h bytes   ( 49.5%)
     EEPROM space         used     0h (     0) of   100h bytes   (  0.0%)
-    Configuration bits   used     2h (     2) of     2h words   (100.0%)
+    Configuration bits   used     1h (     1) of     2h words   ( 50.0%)
     ID Location space    used     0h (     0) of     4h bytes   (  0.0%)
 
