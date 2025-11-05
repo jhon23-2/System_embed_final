@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=lcd.c i2c.c lcd_i2c.c dht11.c
+SOURCEFILES_QUOTED_IF_SPACED=lcd.c i2c.c lcd_i2c.c dht11.c ds1307.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/lcd.p1 ${OBJECTDIR}/i2c.p1 ${OBJECTDIR}/lcd_i2c.p1 ${OBJECTDIR}/dht11.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/lcd.p1.d ${OBJECTDIR}/i2c.p1.d ${OBJECTDIR}/lcd_i2c.p1.d ${OBJECTDIR}/dht11.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/lcd.p1 ${OBJECTDIR}/i2c.p1 ${OBJECTDIR}/lcd_i2c.p1 ${OBJECTDIR}/dht11.p1 ${OBJECTDIR}/ds1307.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/lcd.p1.d ${OBJECTDIR}/i2c.p1.d ${OBJECTDIR}/lcd_i2c.p1.d ${OBJECTDIR}/dht11.p1.d ${OBJECTDIR}/ds1307.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/lcd.p1 ${OBJECTDIR}/i2c.p1 ${OBJECTDIR}/lcd_i2c.p1 ${OBJECTDIR}/dht11.p1
+OBJECTFILES=${OBJECTDIR}/lcd.p1 ${OBJECTDIR}/i2c.p1 ${OBJECTDIR}/lcd_i2c.p1 ${OBJECTDIR}/dht11.p1 ${OBJECTDIR}/ds1307.p1
 
 # Source Files
-SOURCEFILES=lcd.c i2c.c lcd_i2c.c dht11.c
+SOURCEFILES=lcd.c i2c.c lcd_i2c.c dht11.c ds1307.c
 
 
 
@@ -120,6 +120,14 @@ ${OBJECTDIR}/dht11.p1: dht11.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/dht11.d ${OBJECTDIR}/dht11.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/dht11.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/ds1307.p1: ds1307.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/ds1307.p1.d 
+	@${RM} ${OBJECTDIR}/ds1307.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/ds1307.p1 ds1307.c 
+	@-${MV} ${OBJECTDIR}/ds1307.d ${OBJECTDIR}/ds1307.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/ds1307.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 else
 ${OBJECTDIR}/lcd.p1: lcd.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
@@ -152,6 +160,14 @@ ${OBJECTDIR}/dht11.p1: dht11.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/dht11.p1 dht11.c 
 	@-${MV} ${OBJECTDIR}/dht11.d ${OBJECTDIR}/dht11.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/dht11.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/ds1307.p1: ds1307.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/ds1307.p1.d 
+	@${RM} ${OBJECTDIR}/ds1307.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/ds1307.p1 ds1307.c 
+	@-${MV} ${OBJECTDIR}/ds1307.d ${OBJECTDIR}/ds1307.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/ds1307.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 

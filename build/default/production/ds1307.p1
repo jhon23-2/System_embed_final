@@ -1,54 +1,26 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[p mainexit ]
-"3387 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 3387: extern volatile unsigned char ANSEL __attribute__((address(0x188)));
-[v _ANSEL `Vuc ~T0 @X0 0 e@392 ]
-"3449
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 3449: extern volatile unsigned char ANSELH __attribute__((address(0x189)));
-[v _ANSELH `Vuc ~T0 @X0 0 e@393 ]
-[v F164 `(v ~T0 @X0 1 tf1`ul ]
+[v F181 `(v ~T0 @X0 1 tf1`ul ]
 "20 C:\Program Files\Microchip\xc8\v3.10\pic\include/builtins.h
-[v __delay `JF164 ~T0 @X0 0 e ]
+[v __delay `JF181 ~T0 @X0 0 e ]
 [p i __delay ]
-"24 ./i2c.h
-[; ;./i2c.h: 24: void I2C_Init_Master(unsigned char sp_i2c);
-[v _I2C_Init_Master `(v ~T0 @X0 0 ef1`uc ]
-"11 ./lcd_i2c.h
-[; ;./lcd_i2c.h: 11: void Lcd_Init(void);
-[v _Lcd_Init `(v ~T0 @X0 0 ef ]
-"16
-[; ;./lcd_i2c.h: 16: void Lcd_Clear(void);
-[v _Lcd_Clear `(v ~T0 @X0 0 ef ]
-"13
-[; ;./lcd_i2c.h: 13: void Lcd_Set_Cursor(char col, char row);
-[v _Lcd_Set_Cursor `(v ~T0 @X0 0 ef2`uc`uc ]
-"15
-[; ;./lcd_i2c.h: 15: void Lcd_Write_String(const char *str);
-[v _Lcd_Write_String `(v ~T0 @X0 0 ef1`*Cuc ]
-"22 ./dht11.h
-[; ;./dht11.h: 22: void dht11_config (void);
-[v _dht11_config `(v ~T0 @X0 0 ef ]
-"11 ./ds1307.h
-[; ;./ds1307.h: 11: void ds1307_init(void);
-[v _ds1307_init `(v ~T0 @X0 0 ef ]
-"13
-[; ;./ds1307.h: 13: void ds1307_set_time(uint8_t hour, uint8_t min, uint8_t sec);
-[v _ds1307_set_time `(v ~T0 @X0 0 ef3`uc`uc`uc ]
-"12
-[; ;./ds1307.h: 12: void ds1307_set_date(uint8_t day, uint8_t month, uint8_t year);
-[v _ds1307_set_date `(v ~T0 @X0 0 ef3`uc`uc`uc ]
-"23 ./dht11.h
-[; ;./dht11.h: 23: uint8_t dht11_read (float *phum, float *ptemp);
-[v _dht11_read `(uc ~T0 @X0 0 ef2`*f`*f ]
-"15 ./ds1307.h
-[; ;./ds1307.h: 15: void ds1307_get_time(uint8_t *hour, uint8_t *min, uint8_t *sec);
-[v _ds1307_get_time `(v ~T0 @X0 0 ef3`*uc`*uc`*uc ]
-"14
-[; ;./ds1307.h: 14: void ds1307_get_date(uint8_t *day, uint8_t *month, uint8_t *year);
-[v _ds1307_get_date `(v ~T0 @X0 0 ef3`*uc`*uc`*uc ]
-"121 C:\Program Files\Microchip\xc8\v3.10\pic\include\c99/stdio.h
-[; ;C:\Program Files\Microchip\xc8\v3.10\pic\include\c99/stdio.h: 121: int sprintf(char *restrict, const char *restrict, ...);
-[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
+"25 ./i2c.h
+[; ;./i2c.h: 25: void I2C_Start(void);
+[v _I2C_Start `(v ~T0 @X0 0 ef ]
+"31
+[; ;./i2c.h: 31: uint8_t I2C_Write(char data);
+[v _I2C_Write `(uc ~T0 @X0 0 ef1`uc ]
+"26
+[; ;./i2c.h: 26: void I2C_Stop(void);
+[v _I2C_Stop `(v ~T0 @X0 0 ef ]
+"30
+[; ;./i2c.h: 30: unsigned char I2C_Read(void);
+[v _I2C_Read `(uc ~T0 @X0 0 ef ]
+"28
+[; ;./i2c.h: 28: void I2C_Ack(void);
+[v _I2C_Ack `(v ~T0 @X0 0 ef ]
+"29
+[; ;./i2c.h: 29: void I2C_Nack(void);
+[v _I2C_Nack `(v ~T0 @X0 0 ef ]
 "54 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 54: __asm("INDF equ 00h");
 [; <" INDF equ 00h ;# ">
@@ -283,314 +255,454 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3546
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 3546: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
-"15 lcd.c
-[; ;lcd.c: 15: 
-[p x FOSC  =  HS ]
-"16
-[; ;lcd.c: 16:     ANSEL = 0x00;
-[p x WDTE  =  OFF ]
-"17
-[; ;lcd.c: 17:     ANSELH = 0x00;
-[p x PWRTE  =  ON ]
-"18
-[; ;lcd.c: 18: 
-[p x MCLRE  =  ON ]
-"19
-[; ;lcd.c: 19:     _delay((unsigned long)((500)*(20000000/4000.0)));
-[p x CP  =  OFF ]
-"20
-[; ;lcd.c: 20: 
-[p x CPD  =  OFF ]
-"21
-[; ;lcd.c: 21: 
-[p x BOREN  =  ON ]
-"22
-[; ;lcd.c: 22:     I2C_Init_Master(0x80);
-[p x IESO  =  OFF ]
-"23
-[; ;lcd.c: 23:     _delay((unsigned long)((100)*(20000000/4000.0)));
-[p x FCMEN  =  OFF ]
+"23 ds1307.c
+[; ;ds1307.c: 23: static uint8_t bcd_to_dec(uint8_t val)
+[v _bcd_to_dec `(uc ~T0 @X0 1 sf1`uc ]
 "24
-[; ;lcd.c: 24: 
-[p x LVP  =  OFF ]
-"25
-[; ;lcd.c: 25: 
-[p x BOR4V  =  BOR40V ]
-"26
-[; ;lcd.c: 26:     Lcd_Init();
-[p x WRT  =  OFF ]
-[v $root$_main `(v ~T0 @X0 0 e ]
-"30
-[; ;lcd.c: 30:     Lcd_Set_Cursor(1, 1);
-[v _main `(v ~T0 @X0 1 ef ]
-"31
-[; ;lcd.c: 31:     Lcd_Write_String("  Estacion");
+[; ;ds1307.c: 24: {
 {
-[e :U _main ]
+[e :U _bcd_to_dec ]
+"23
+[; ;ds1307.c: 23: static uint8_t bcd_to_dec(uint8_t val)
+[v _val `uc ~T0 @X0 1 r1 ]
+"24
+[; ;ds1307.c: 24: {
 [f ]
+"25
+[; ;ds1307.c: 25:     return (uint8_t)(((val >> 4) * 10) + (val & 0x0F));
+[e ) -> + * >> -> _val `i -> 4 `i -> 10 `i & -> _val `i -> 15 `i `uc ]
+[e $UE 142  ]
+"26
+[; ;ds1307.c: 26: }
+[e :UE 142 ]
+}
+"28
+[; ;ds1307.c: 28: static uint8_t dec_to_bcd(uint8_t val)
+[v _dec_to_bcd `(uc ~T0 @X0 1 sf1`uc ]
+"29
+[; ;ds1307.c: 29: {
+{
+[e :U _dec_to_bcd ]
+"28
+[; ;ds1307.c: 28: static uint8_t dec_to_bcd(uint8_t val)
+[v _val `uc ~T0 @X0 1 r1 ]
+"29
+[; ;ds1307.c: 29: {
+[f ]
+"30
+[; ;ds1307.c: 30:     uint8_t decenas = (uint8_t)(val / 10);
+[v _decenas `uc ~T0 @X0 1 a ]
+[e = _decenas -> / -> _val `i -> 10 `i `uc ]
+"31
+[; ;ds1307.c: 31:     uint8_t unidades = (uint8_t)(val % 10);
+[v _unidades `uc ~T0 @X0 1 a ]
+[e = _unidades -> % -> _val `i -> 10 `i `uc ]
 "32
-[; ;lcd.c: 32:     Lcd_Set_Cursor(1, 2);
-[v _temp_f `f ~T0 @X0 1 a ]
-[v _hum_f `f ~T0 @X0 1 a ]
+[; ;ds1307.c: 32:     return (uint8_t)((decenas << 4) | unidades);
+[e ) -> | << -> _decenas `i -> 4 `i -> _unidades `i `uc ]
+[e $UE 143  ]
 "33
-[; ;lcd.c: 33:     Lcd_Write_String(" Meteorologica");
-[v _hora `uc ~T0 @X0 1 a ]
-[v _min `uc ~T0 @X0 1 a ]
-[v _seg `uc ~T0 @X0 1 a ]
-"34
-[; ;lcd.c: 34:     _delay((unsigned long)((2000)*(20000000/4000.0)));
-[v _dia `uc ~T0 @X0 1 a ]
-[v _mes `uc ~T0 @X0 1 a ]
-[v _ano `uc ~T0 @X0 1 a ]
-"35
-[; ;lcd.c: 35: 
-[v _buffer `uc ~T0 @X0 -> 17 `i a ]
+[; ;ds1307.c: 33: }
+[e :UE 143 ]
+}
 "36
-[; ;lcd.c: 36: 
-[v _dht_ok `uc ~T0 @X0 1 a ]
-[e = _dht_ok -> -> 0 `i `uc ]
-"39
-[; ;lcd.c: 39: 
-[v _pantalla_actual `uc ~T0 @X0 1 a ]
-[e = _pantalla_actual -> -> 0 `i `uc ]
-"40
-[; ;lcd.c: 40: 
-[v _contador_segundos `uc ~T0 @X0 1 a ]
-[e = _contador_segundos -> -> 0 `i `uc ]
+[; ;ds1307.c: 36: void ds1307_init(void)
+[v _ds1307_init `(v ~T0 @X0 1 ef ]
+"37
+[; ;ds1307.c: 37: {
+{
+[e :U _ds1307_init ]
+[f ]
+"38
+[; ;ds1307.c: 38:     _delay((unsigned long)((50)*(20000000/4000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
 "41
-[; ;lcd.c: 41:     ds1307_init();
-[v _contador_dht `uc ~T0 @X0 1 a ]
-[e = _contador_dht -> -> 0 `i `uc ]
+[; ;ds1307.c: 41:     I2C_Start();
+[e ( _I2C_Start ..  ]
+"42
+[; ;ds1307.c: 42:     I2C_Write(0xD0);
+[e ( _I2C_Write (1 -> -> 208 `i `uc ]
+"43
+[; ;ds1307.c: 43:     I2C_Write(0x00);
+[e ( _I2C_Write (1 -> -> 0 `i `uc ]
 "44
-[; ;lcd.c: 44:     Lcd_Clear();
-[e = _ANSEL -> -> 0 `i `uc ]
+[; ;ds1307.c: 44:     I2C_Write(0x00);
+[e ( _I2C_Write (1 -> -> 0 `i `uc ]
 "45
-[; ;lcd.c: 45:     Lcd_Set_Cursor(1, 1);
-[e = _ANSELH -> -> 0 `i `uc ]
+[; ;ds1307.c: 45:     I2C_Stop();
+[e ( _I2C_Stop ..  ]
 "47
-[; ;lcd.c: 47:     Lcd_Set_Cursor(1, 2);
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+[; ;ds1307.c: 47:     _delay((unsigned long)((20)*(20000000/4000.0)));
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
 "50
-[; ;lcd.c: 50: 
-[e ( _I2C_Init_Master (1 -> -> 128 `i `uc ]
+[; ;ds1307.c: 50:     I2C_Start();
+[e ( _I2C_Start ..  ]
 "51
-[; ;lcd.c: 51:     ds1307_set_time(19, 30, 0);
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+[; ;ds1307.c: 51:     I2C_Write(0xD0);
+[e ( _I2C_Write (1 -> -> 208 `i `uc ]
+"52
+[; ;ds1307.c: 52:     I2C_Write(0x07);
+[e ( _I2C_Write (1 -> -> 7 `i `uc ]
+"53
+[; ;ds1307.c: 53:     I2C_Write(0x00);
+[e ( _I2C_Write (1 -> -> 0 `i `uc ]
 "54
-[; ;lcd.c: 54:     _delay((unsigned long)((1500)*(20000000/4000.0)));
-[e ( _Lcd_Init ..  ]
-"55
-[; ;lcd.c: 55: 
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+[; ;ds1307.c: 54:     I2C_Stop();
+[e ( _I2C_Stop ..  ]
+"56
+[; ;ds1307.c: 56:     _delay((unsigned long)((20)*(20000000/4000.0)));
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
 "57
-[; ;lcd.c: 57:     dht_ok = dht11_read(&hum_f, &temp_f);
-[e ( _Lcd_Clear ..  ]
-"58
-[; ;lcd.c: 58: 
-[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-"59
-[; ;lcd.c: 59:     Lcd_Clear();
-[e ( _Lcd_Write_String (1 :s 1C ]
-"60
-[; ;lcd.c: 60: 
-[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
-"61
-[; ;lcd.c: 61:     while(1)
-[e ( _Lcd_Write_String (1 :s 2C ]
-"62
-[; ;lcd.c: 62:     {
-[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-"65
-[; ;lcd.c: 65: 
-[e ( _dht11_config ..  ]
-"66
-[; ;lcd.c: 66:         if(contador_dht >= 3) {
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-"69
-[; ;lcd.c: 69:         }
-[e ( _ds1307_init ..  ]
-"70
-[; ;lcd.c: 70:         contador_dht++;
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-"72
-[; ;lcd.c: 72:         if(contador_segundos >= 5) {
-[e ( _Lcd_Clear ..  ]
-"73
-[; ;lcd.c: 73:             pantalla_actual = !pantalla_actual;
-[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-"74
-[; ;lcd.c: 74:             contador_segundos = 0;
-[e ( _Lcd_Write_String (1 :s 3C ]
-"75
-[; ;lcd.c: 75:             Lcd_Clear();
-[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
-"76
-[; ;lcd.c: 76:             _delay((unsigned long)((2)*(20000000/4000.0)));
-[e ( _Lcd_Write_String (1 :s 4C ]
-"79
-[; ;lcd.c: 79: 
-[e ( _ds1307_set_time (3 , , -> -> 19 `i `uc -> -> 30 `i `uc -> -> 0 `i `uc ]
-"80
-[; ;lcd.c: 80:         if(pantalla_actual == 0) {
-[e ( _ds1307_set_date (3 , , -> -> 29 `i `uc -> -> 10 `i `uc -> -> 25 `i `uc ]
-"82
-[; ;lcd.c: 82:             Lcd_Set_Cursor(1, 1);
-[e ( __delay (1 -> * -> -> 1500 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-"85
-[; ;lcd.c: 85: 
-[e = _dht_ok ( _dht11_read (2 , &U _hum_f &U _temp_f ]
-"87
-[; ;lcd.c: 87:             sprintf(buffer, " %02d/%02d/20%02d", dia, mes, ano);
-[e ( _Lcd_Clear ..  ]
-"89
-[; ;lcd.c: 89: 
-[e :U 146 ]
-"90
-[; ;lcd.c: 90:         } else {
-{
-"91
-[; ;lcd.c: 91: 
-[e ( _ds1307_get_time (3 , , &U _hora &U _min &U _seg ]
-"92
-[; ;lcd.c: 92:             Lcd_Set_Cursor(1, 1);
-[e ( _ds1307_get_date (3 , , &U _dia &U _mes &U _ano ]
-"94
-[; ;lcd.c: 94:                 int temp_ent = (int)temp_f;
-[e $ ! >= -> _contador_dht `i -> 3 `i 148  ]
-{
-"95
-[; ;lcd.c: 95:                 int temp_dec = (int)((temp_f - temp_ent) * 10);
-[e = _dht_ok ( _dht11_read (2 , &U _hum_f &U _temp_f ]
-"96
-[; ;lcd.c: 96:                 sprintf(buffer, "Temp: %d.%d C", temp_ent, temp_dec);
-[e = _contador_dht -> -> 0 `i `uc ]
-"97
-[; ;lcd.c: 97:             } else {
-}
-[e :U 148 ]
-"98
-[; ;lcd.c: 98:                 sprintf(buffer, "Temp: -- C");
-[e ++ _contador_dht -> -> 1 `i `uc ]
-"100
-[; ;lcd.c: 100:             Lcd_Write_String(buffer);
-[e $ ! >= -> _contador_segundos `i -> 5 `i 149  ]
-{
-"101
-[; ;lcd.c: 101: 
-[e = _pantalla_actual -> -> ! != -> _pantalla_actual `i -> 0 `i `i `uc ]
-"102
-[; ;lcd.c: 102:             Lcd_Set_Cursor(1, 2);
-[e = _contador_segundos -> -> 0 `i `uc ]
-"103
-[; ;lcd.c: 103:             if(dht_ok) {
-[e ( _Lcd_Clear ..  ]
-"104
-[; ;lcd.c: 104:                 int hum_ent = (int)hum_f;
-[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-"105
-[; ;lcd.c: 105:                 int hum_dec = (int)((hum_f - hum_ent) * 10);
-}
-[e :U 149 ]
-"108
-[; ;lcd.c: 108:                 sprintf(buffer, "Hum : -- %%");
-[e $ ! == -> _pantalla_actual `i -> 0 `i 150  ]
-{
-"110
-[; ;lcd.c: 110:             Lcd_Write_String(buffer);
-[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-"111
-[; ;lcd.c: 111:         }
-[e ( _sprintf (1 , , , (. , &U _buffer :s 5C -> _hora `i -> _min `i -> _seg `i ]
-"112
-[; ;lcd.c: 112: 
-[e ( _Lcd_Write_String (1 -> &U _buffer `*Cuc ]
-"114
-[; ;lcd.c: 114:         _delay((unsigned long)((1000)*(20000000/4000.0)));
-[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
-"115
-[; ;lcd.c: 115:     }
-[e ( _sprintf (1 , , , (. , &U _buffer :s 6C -> _dia `i -> _mes `i -> _ano `i ]
-"116
-[; ;lcd.c: 116: }
-[e ( _Lcd_Write_String (1 -> &U _buffer `*Cuc ]
-"118
-}
-[e $U 151  ]
-[e :U 150 ]
-{
-"120
-[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-"121
-[e $ ! != -> _dht_ok `i -> 0 `i 152  ]
-{
-"122
-[v _temp_ent `i ~T0 @X0 1 a ]
-[e = _temp_ent -> _temp_f `i ]
-"123
-[v _temp_dec `i ~T0 @X0 1 a ]
-[e = _temp_dec -> * - _temp_f -> _temp_ent `f -> -> 10 `i `f `i ]
-"124
-[e ( _sprintf (1 , , (. , &U _buffer :s 7C _temp_ent _temp_dec ]
-"125
-}
-[e $U 153  ]
-[e :U 152 ]
-{
-"126
-[e ( _sprintf (1 , &U _buffer :s 8C ]
-"127
-}
-[e :U 153 ]
-"128
-[e ( _Lcd_Write_String (1 -> &U _buffer `*Cuc ]
-"130
-[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
-"131
-[e $ ! != -> _dht_ok `i -> 0 `i 154  ]
-{
-"132
-[v _hum_ent `i ~T0 @X0 1 a ]
-[e = _hum_ent -> _hum_f `i ]
-"133
-[v _hum_dec `i ~T0 @X0 1 a ]
-[e = _hum_dec -> * - _hum_f -> _hum_ent `f -> -> 10 `i `f `i ]
-"134
-[e ( _sprintf (1 , , (. , &U _buffer :s 9C _hum_ent _hum_dec ]
-"135
-}
-[e $U 155  ]
-[e :U 154 ]
-{
-"136
-[e ( _sprintf (1 , &U _buffer :s 10C ]
-"137
-}
-[e :U 155 ]
-"138
-[e ( _Lcd_Write_String (1 -> &U _buffer `*Cuc ]
-"139
-}
-[e :U 151 ]
-"141
-[e ++ _contador_segundos -> -> 1 `i `uc ]
-"142
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-"143
-}
-[e :U 145 ]
-[e $U 146  ]
-[e :U 147 ]
-"144
+[; ;ds1307.c: 57: }
 [e :UE 144 ]
 }
-[p f _sprintf 9470084 ]
-[a 3C 32 67 111 110 102 105 103 117 114 97 110 100 111 0 ]
-[a 1C 32 32 69 115 116 97 99 105 111 110 0 ]
-[a 5C 32 32 32 37 48 50 100 58 37 48 50 100 58 37 48 50 100 0 ]
-[a 6C 32 37 48 50 100 47 37 48 50 100 47 50 48 37 48 50 100 0 ]
-[a 2C 32 77 101 116 101 111 114 111 108 111 103 105 99 97 0 ]
-[a 7C 84 101 109 112 58 32 37 100 46 37 100 32 67 0 ]
-[a 8C 84 101 109 112 58 32 45 45 32 67 0 ]
-[a 4C 32 115 105 115 116 101 109 97 46 46 46 0 ]
-[a 9C 72 117 109 32 58 32 37 100 46 37 100 32 37 37 0 ]
-[a 10C 72 117 109 32 58 32 45 45 32 37 37 0 ]
+"60
+[; ;ds1307.c: 60: void ds1307_set_date(uint8_t day, uint8_t month, uint8_t year)
+[v _ds1307_set_date `(v ~T0 @X0 1 ef3`uc`uc`uc ]
+"61
+[; ;ds1307.c: 61: {
+{
+[e :U _ds1307_set_date ]
+"60
+[; ;ds1307.c: 60: void ds1307_set_date(uint8_t day, uint8_t month, uint8_t year)
+[v _day `uc ~T0 @X0 1 r1 ]
+[v _month `uc ~T0 @X0 1 r2 ]
+[v _year `uc ~T0 @X0 1 r3 ]
+"61
+[; ;ds1307.c: 61: {
+[f ]
+"62
+[; ;ds1307.c: 62:     I2C_Start();
+[e ( _I2C_Start ..  ]
+"64
+[; ;ds1307.c: 64:     if(I2C_Write(0xD0) == 0)
+[e $ ! == -> ( _I2C_Write (1 -> -> 208 `i `uc `i -> 0 `i 146  ]
+"65
+[; ;ds1307.c: 65:     {
+{
+"66
+[; ;ds1307.c: 66:         I2C_Write(0x04);
+[e ( _I2C_Write (1 -> -> 4 `i `uc ]
+"67
+[; ;ds1307.c: 67:         I2C_Write(dec_to_bcd(day));
+[e ( _I2C_Write (1 -> ( _dec_to_bcd (1 _day `uc ]
+"68
+[; ;ds1307.c: 68:         I2C_Write(dec_to_bcd(month));
+[e ( _I2C_Write (1 -> ( _dec_to_bcd (1 _month `uc ]
+"69
+[; ;ds1307.c: 69:         I2C_Write(dec_to_bcd(year));
+[e ( _I2C_Write (1 -> ( _dec_to_bcd (1 _year `uc ]
+"70
+[; ;ds1307.c: 70:     }
+}
+[e :U 146 ]
+"72
+[; ;ds1307.c: 72:     I2C_Stop();
+[e ( _I2C_Stop ..  ]
+"73
+[; ;ds1307.c: 73:     _delay((unsigned long)((20)*(20000000/4000.0)));
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"74
+[; ;ds1307.c: 74: }
+[e :UE 145 ]
+}
+"77
+[; ;ds1307.c: 77: void ds1307_set_time(uint8_t hour, uint8_t min, uint8_t sec)
+[v _ds1307_set_time `(v ~T0 @X0 1 ef3`uc`uc`uc ]
+"78
+[; ;ds1307.c: 78: {
+{
+[e :U _ds1307_set_time ]
+"77
+[; ;ds1307.c: 77: void ds1307_set_time(uint8_t hour, uint8_t min, uint8_t sec)
+[v _hour `uc ~T0 @X0 1 r1 ]
+[v _min `uc ~T0 @X0 1 r2 ]
+[v _sec `uc ~T0 @X0 1 r3 ]
+"78
+[; ;ds1307.c: 78: {
+[f ]
+"79
+[; ;ds1307.c: 79:     I2C_Start();
+[e ( _I2C_Start ..  ]
+"81
+[; ;ds1307.c: 81:     if(I2C_Write(0xD0) == 0)
+[e $ ! == -> ( _I2C_Write (1 -> -> 208 `i `uc `i -> 0 `i 148  ]
+"82
+[; ;ds1307.c: 82:     {
+{
+"83
+[; ;ds1307.c: 83:         I2C_Write(0x00);
+[e ( _I2C_Write (1 -> -> 0 `i `uc ]
+"84
+[; ;ds1307.c: 84:         I2C_Write(dec_to_bcd(sec) & 0x7F);
+[e ( _I2C_Write (1 -> & -> ( _dec_to_bcd (1 _sec `i -> 127 `i `uc ]
+"85
+[; ;ds1307.c: 85:         I2C_Write(dec_to_bcd(min));
+[e ( _I2C_Write (1 -> ( _dec_to_bcd (1 _min `uc ]
+"86
+[; ;ds1307.c: 86:         I2C_Write(dec_to_bcd(hour) & 0x3F);
+[e ( _I2C_Write (1 -> & -> ( _dec_to_bcd (1 _hour `i -> 63 `i `uc ]
+"87
+[; ;ds1307.c: 87:     }
+}
+[e :U 148 ]
+"89
+[; ;ds1307.c: 89:     I2C_Stop();
+[e ( _I2C_Stop ..  ]
+"90
+[; ;ds1307.c: 90:     _delay((unsigned long)((20)*(20000000/4000.0)));
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"91
+[; ;ds1307.c: 91: }
+[e :UE 147 ]
+}
+"94
+[; ;ds1307.c: 94: void ds1307_get_date(uint8_t *day, uint8_t *month, uint8_t *year)
+[v _ds1307_get_date `(v ~T0 @X0 1 ef3`*uc`*uc`*uc ]
+"95
+[; ;ds1307.c: 95: {
+{
+[e :U _ds1307_get_date ]
+"94
+[; ;ds1307.c: 94: void ds1307_get_date(uint8_t *day, uint8_t *month, uint8_t *year)
+[v _day `*uc ~T0 @X0 1 r1 ]
+[v _month `*uc ~T0 @X0 1 r2 ]
+[v _year `*uc ~T0 @X0 1 r3 ]
+"95
+[; ;ds1307.c: 95: {
+[f ]
+"96
+[; ;ds1307.c: 96:     uint8_t temp;
+[v _temp `uc ~T0 @X0 1 a ]
+"99
+[; ;ds1307.c: 99:     I2C_Start();
+[e ( _I2C_Start ..  ]
+"101
+[; ;ds1307.c: 101:     if(I2C_Write(0xD0) == 0)
+[e $ ! == -> ( _I2C_Write (1 -> -> 208 `i `uc `i -> 0 `i 150  ]
+"102
+[; ;ds1307.c: 102:     {
+{
+"103
+[; ;ds1307.c: 103:         I2C_Write(0x04);
+[e ( _I2C_Write (1 -> -> 4 `i `uc ]
+"104
+[; ;ds1307.c: 104:         I2C_Stop();
+[e ( _I2C_Stop ..  ]
+"106
+[; ;ds1307.c: 106:         _delay((unsigned long)((50)*(20000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 20000000 `l `d .4000000.0 `ul ]
+"109
+[; ;ds1307.c: 109:         I2C_Start();
+[e ( _I2C_Start ..  ]
+"111
+[; ;ds1307.c: 111:         if(I2C_Write(0xD1) == 0)
+[e $ ! == -> ( _I2C_Write (1 -> -> 209 `i `uc `i -> 0 `i 151  ]
+"112
+[; ;ds1307.c: 112:         {
+{
+"113
+[; ;ds1307.c: 113:             temp = I2C_Read();
+[e = _temp ( _I2C_Read ..  ]
+"114
+[; ;ds1307.c: 114:             I2C_Ack();
+[e ( _I2C_Ack ..  ]
+"115
+[; ;ds1307.c: 115:             *day = bcd_to_dec(temp & 0x3F);
+[e = *U _day ( _bcd_to_dec (1 -> & -> _temp `i -> 63 `i `uc ]
+"117
+[; ;ds1307.c: 117:             temp = I2C_Read();
+[e = _temp ( _I2C_Read ..  ]
+"118
+[; ;ds1307.c: 118:             I2C_Ack();
+[e ( _I2C_Ack ..  ]
+"119
+[; ;ds1307.c: 119:             *month = bcd_to_dec(temp & 0x1F);
+[e = *U _month ( _bcd_to_dec (1 -> & -> _temp `i -> 31 `i `uc ]
+"121
+[; ;ds1307.c: 121:             temp = I2C_Read();
+[e = _temp ( _I2C_Read ..  ]
+"122
+[; ;ds1307.c: 122:             I2C_Nack();
+[e ( _I2C_Nack ..  ]
+"123
+[; ;ds1307.c: 123:             *year = bcd_to_dec(temp);
+[e = *U _year ( _bcd_to_dec (1 _temp ]
+"124
+[; ;ds1307.c: 124:         }
+}
+[e $U 152  ]
+"125
+[; ;ds1307.c: 125:         else
+[e :U 151 ]
+"126
+[; ;ds1307.c: 126:         {
+{
+"128
+[; ;ds1307.c: 128:             *day = 1;
+[e = *U _day -> -> 1 `i `uc ]
+"129
+[; ;ds1307.c: 129:             *month = 1;
+[e = *U _month -> -> 1 `i `uc ]
+"130
+[; ;ds1307.c: 130:             *year = 0;
+[e = *U _year -> -> 0 `i `uc ]
+"131
+[; ;ds1307.c: 131:         }
+}
+[e :U 152 ]
+"132
+[; ;ds1307.c: 132:     }
+}
+[e $U 153  ]
+"133
+[; ;ds1307.c: 133:     else
+[e :U 150 ]
+"134
+[; ;ds1307.c: 134:     {
+{
+"136
+[; ;ds1307.c: 136:         *day = 1;
+[e = *U _day -> -> 1 `i `uc ]
+"137
+[; ;ds1307.c: 137:         *month = 1;
+[e = *U _month -> -> 1 `i `uc ]
+"138
+[; ;ds1307.c: 138:         *year = 0;
+[e = *U _year -> -> 0 `i `uc ]
+"139
+[; ;ds1307.c: 139:     }
+}
+[e :U 153 ]
+"141
+[; ;ds1307.c: 141:     I2C_Stop();
+[e ( _I2C_Stop ..  ]
+"142
+[; ;ds1307.c: 142: }
+[e :UE 149 ]
+}
+"145
+[; ;ds1307.c: 145: void ds1307_get_time(uint8_t *hour, uint8_t *min, uint8_t *sec)
+[v _ds1307_get_time `(v ~T0 @X0 1 ef3`*uc`*uc`*uc ]
+"146
+[; ;ds1307.c: 146: {
+{
+[e :U _ds1307_get_time ]
+"145
+[; ;ds1307.c: 145: void ds1307_get_time(uint8_t *hour, uint8_t *min, uint8_t *sec)
+[v _hour `*uc ~T0 @X0 1 r1 ]
+[v _min `*uc ~T0 @X0 1 r2 ]
+[v _sec `*uc ~T0 @X0 1 r3 ]
+"146
+[; ;ds1307.c: 146: {
+[f ]
+"147
+[; ;ds1307.c: 147:     uint8_t temp;
+[v _temp `uc ~T0 @X0 1 a ]
+"150
+[; ;ds1307.c: 150:     I2C_Start();
+[e ( _I2C_Start ..  ]
+"152
+[; ;ds1307.c: 152:     if(I2C_Write(0xD0) == 0)
+[e $ ! == -> ( _I2C_Write (1 -> -> 208 `i `uc `i -> 0 `i 155  ]
+"153
+[; ;ds1307.c: 153:     {
+{
+"154
+[; ;ds1307.c: 154:         I2C_Write(0x00);
+[e ( _I2C_Write (1 -> -> 0 `i `uc ]
+"155
+[; ;ds1307.c: 155:         I2C_Stop();
+[e ( _I2C_Stop ..  ]
+"157
+[; ;ds1307.c: 157:         _delay((unsigned long)((50)*(20000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 20000000 `l `d .4000000.0 `ul ]
+"160
+[; ;ds1307.c: 160:         I2C_Start();
+[e ( _I2C_Start ..  ]
+"162
+[; ;ds1307.c: 162:         if(I2C_Write(0xD1) == 0)
+[e $ ! == -> ( _I2C_Write (1 -> -> 209 `i `uc `i -> 0 `i 156  ]
+"163
+[; ;ds1307.c: 163:         {
+{
+"164
+[; ;ds1307.c: 164:             temp = I2C_Read();
+[e = _temp ( _I2C_Read ..  ]
+"165
+[; ;ds1307.c: 165:             I2C_Ack();
+[e ( _I2C_Ack ..  ]
+"166
+[; ;ds1307.c: 166:             *sec = bcd_to_dec(temp & 0x7F);
+[e = *U _sec ( _bcd_to_dec (1 -> & -> _temp `i -> 127 `i `uc ]
+"168
+[; ;ds1307.c: 168:             temp = I2C_Read();
+[e = _temp ( _I2C_Read ..  ]
+"169
+[; ;ds1307.c: 169:             I2C_Ack();
+[e ( _I2C_Ack ..  ]
+"170
+[; ;ds1307.c: 170:             *min = bcd_to_dec(temp & 0x7F);
+[e = *U _min ( _bcd_to_dec (1 -> & -> _temp `i -> 127 `i `uc ]
+"172
+[; ;ds1307.c: 172:             temp = I2C_Read();
+[e = _temp ( _I2C_Read ..  ]
+"173
+[; ;ds1307.c: 173:             I2C_Nack();
+[e ( _I2C_Nack ..  ]
+"174
+[; ;ds1307.c: 174:             *hour = bcd_to_dec(temp & 0x3F);
+[e = *U _hour ( _bcd_to_dec (1 -> & -> _temp `i -> 63 `i `uc ]
+"175
+[; ;ds1307.c: 175:         }
+}
+[e $U 157  ]
+"176
+[; ;ds1307.c: 176:         else
+[e :U 156 ]
+"177
+[; ;ds1307.c: 177:         {
+{
+"179
+[; ;ds1307.c: 179:             *sec = 0;
+[e = *U _sec -> -> 0 `i `uc ]
+"180
+[; ;ds1307.c: 180:             *min = 0;
+[e = *U _min -> -> 0 `i `uc ]
+"181
+[; ;ds1307.c: 181:             *hour = 0;
+[e = *U _hour -> -> 0 `i `uc ]
+"182
+[; ;ds1307.c: 182:         }
+}
+[e :U 157 ]
+"183
+[; ;ds1307.c: 183:     }
+}
+[e $U 158  ]
+"184
+[; ;ds1307.c: 184:     else
+[e :U 155 ]
+"185
+[; ;ds1307.c: 185:     {
+{
+"187
+[; ;ds1307.c: 187:         *sec = 0;
+[e = *U _sec -> -> 0 `i `uc ]
+"188
+[; ;ds1307.c: 188:         *min = 0;
+[e = *U _min -> -> 0 `i `uc ]
+"189
+[; ;ds1307.c: 189:         *hour = 0;
+[e = *U _hour -> -> 0 `i `uc ]
+"190
+[; ;ds1307.c: 190:     }
+}
+[e :U 158 ]
+"192
+[; ;ds1307.c: 192:     I2C_Stop();
+[e ( _I2C_Stop ..  ]
+"193
+[; ;ds1307.c: 193: }
+[e :UE 154 ]
+}
