@@ -1,4 +1,4 @@
-# 1 "lcd.c"
+# 1 "dht22.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 295 "<built-in>" 3
@@ -6,8 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "lcd.c" 2
-
+# 1 "dht22.c" 2
+# 1 "./dht22.h" 1
 
 
 
@@ -2672,304 +2672,78 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 2 3
-# 8 "lcd.c" 2
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdbool.h" 1 3
-# 9 "lcd.c" 2
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdio.h" 1 3
-# 24 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdio.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/bits/alltypes.h" 1 3
-# 12 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/bits/alltypes.h" 3
-typedef void * va_list[1];
-
-
-
-
-typedef void * __isoc_va_list[1];
-# 143 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/bits/alltypes.h" 3
-typedef short ssize_t;
-# 253 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/bits/alltypes.h" 3
-typedef long off_t;
-# 409 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/bits/alltypes.h" 3
-typedef struct _IO_FILE FILE;
-# 25 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdio.h" 2 3
-# 52 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdio.h" 3
-typedef union _G_fpos64_t {
- char __opaque[16];
- double __align;
-} fpos_t;
-
-extern FILE *const stdin;
-extern FILE *const stdout;
-extern FILE *const stderr;
-
-
-
-
-
-FILE *fopen(const char *restrict, const char *restrict);
-FILE *freopen(const char *restrict, const char *restrict, FILE *restrict);
-int fclose(FILE *);
-
-int remove(const char *);
-int rename(const char *, const char *);
-
-int feof(FILE *);
-int ferror(FILE *);
-int fflush(FILE *);
-void clearerr(FILE *);
-
-int fseek(FILE *, long, int);
-long ftell(FILE *);
-void rewind(FILE *);
-
-int fgetpos(FILE *restrict, fpos_t *restrict);
-int fsetpos(FILE *, const fpos_t *);
-
-size_t fread(void *restrict, size_t, size_t, FILE *restrict);
-size_t fwrite(const void *restrict, size_t, size_t, FILE *restrict);
-
-int fgetc(FILE *);
-int getc(FILE *);
-int getchar(void);
-
-
-
-
-
-int ungetc(int, FILE *);
-int getch(void);
-
-int fputc(int, FILE *);
-int putc(int, FILE *);
-int putchar(int);
-
-
-
-
-
-void putch(char);
-
-char *fgets(char *restrict, int, FILE *restrict);
-
-char *gets(char *);
-
-
-int fputs(const char *restrict, FILE *restrict);
-int puts(const char *);
-
-__attribute__((__format__(__printf__, 1, 2)))
-int printf(const char *restrict, ...);
-__attribute__((__format__(__printf__, 2, 3)))
-int fprintf(FILE *restrict, const char *restrict, ...);
-__attribute__((__format__(__printf__, 2, 3)))
-int sprintf(char *restrict, const char *restrict, ...);
-__attribute__((__format__(__printf__, 3, 4)))
-int snprintf(char *restrict, size_t, const char *restrict, ...);
-
-__attribute__((__format__(__printf__, 1, 0)))
-int vprintf(const char *restrict, __isoc_va_list);
-int vfprintf(FILE *restrict, const char *restrict, __isoc_va_list);
-__attribute__((__format__(__printf__, 2, 0)))
-int vsprintf(char *restrict, const char *restrict, __isoc_va_list);
-__attribute__((__format__(__printf__, 3, 0)))
-int vsnprintf(char *restrict, size_t, const char *restrict, __isoc_va_list);
-
-__attribute__((__format__(__scanf__, 1, 2)))
-int scanf(const char *restrict, ...);
-__attribute__((__format__(__scanf__, 2, 3)))
-int fscanf(FILE *restrict, const char *restrict, ...);
-__attribute__((__format__(__scanf__, 2, 3)))
-int sscanf(const char *restrict, const char *restrict, ...);
-
-__attribute__((__format__(__scanf__, 1, 0)))
-int vscanf(const char *restrict, __isoc_va_list);
-int vfscanf(FILE *restrict, const char *restrict, __isoc_va_list);
-__attribute__((__format__(__scanf__, 2, 0)))
-int vsscanf(const char *restrict, const char *restrict, __isoc_va_list);
-
-void perror(const char *);
-
-int setvbuf(FILE *restrict, char *restrict, int, size_t);
-void setbuf(FILE *restrict, char *restrict);
-
-char *tmpnam(char *);
-FILE *tmpfile(void);
-
-
-
-
-FILE *fmemopen(void *restrict, size_t, const char *restrict);
-FILE *open_memstream(char **, size_t *);
-FILE *fdopen(int, const char *);
-FILE *popen(const char *, const char *);
-int pclose(FILE *);
-int fileno(FILE *);
-int fseeko(FILE *, off_t, int);
-off_t ftello(FILE *);
-int dprintf(int, const char *restrict, ...);
-int vdprintf(int, const char *restrict, __isoc_va_list);
-void flockfile(FILE *);
-int ftrylockfile(FILE *);
-void funlockfile(FILE *);
-int getc_unlocked(FILE *);
-int getchar_unlocked(void);
-int putc_unlocked(int, FILE *);
-int putchar_unlocked(int);
-ssize_t getdelim(char **restrict, size_t *restrict, int, FILE *restrict);
-ssize_t getline(char **restrict, size_t *restrict, FILE *restrict);
-int renameat(int, const char *, int, const char *);
-char *ctermid(char *);
+# 7 "./dht22.h" 2
 
 
 
 
 
 
-
-char *tempnam(const char *, const char *);
-# 10 "lcd.c" 2
-# 1 "./i2c.h" 1
-# 24 "./i2c.h"
-void I2C_Init_Master(unsigned char sp_i2c);
-void I2C_Start(void);
-void I2C_Stop(void);
-void I2C_Restart(void);
-void I2C_Ack(void);
-void I2C_Nack(void);
-unsigned char I2C_Read(void);
-uint8_t I2C_Write(char data);
-# 11 "lcd.c" 2
-# 1 "./lcd_i2c.h" 1
-# 11 "./lcd_i2c.h"
-void Lcd_Init(void);
-void Lcd_Cmd(unsigned char cmd);
-void Lcd_Set_Cursor(char col, char row);
-void Lcd_Write_Char(char c);
-void Lcd_Write_String(const char *str);
-void Lcd_Clear(void);
-void Lcd_Shift_Right(void);
-void Lcd_Shift_Left(void);
-void Lcd_Blink(void);
-void Lcd_NoBlink(void);
-void Lcd_CGRAM_WriteChar(char n);
-void Lcd_CGRAM_CreateChar(char pos, const char* new_char);
-# 12 "lcd.c" 2
-# 1 "./dht22.h" 1
-# 13 "./dht22.h"
 void DHT22_init(void);
 uint8_t DHT22_read(float *dht_temperatura, float *dht_humedad);
-# 13 "lcd.c" 2
+# 2 "dht22.c" 2
 
-#pragma config FOSC = HS
-#pragma config WDTE = OFF
-#pragma config PWRTE = ON
-#pragma config MCLRE = ON
-#pragma config CP = OFF
-#pragma config CPD = OFF
-#pragma config BOREN = ON
-#pragma config IESO = OFF
-#pragma config FCMEN = OFF
-#pragma config LVP = OFF
-#pragma config DEBUG = OFF
-
-
-
-
-char buffer_tem[16];
-char buffer_hum[16];
-
-void float_to_string_dht22(float value, char* buffer) {
-    int parte_entera;
-    int parte_decimal;
-
-
-    _Bool negativo = 0;
-    if (value < 0) {
-        negativo = 1;
-        value = -value;
-    }
-
-    parte_entera = (int)value;
-
-
-    parte_decimal = (int)((value * 10.0) - (parte_entera * 10));
-
-    if (negativo) {
-        sprintf(buffer, "-%d.%d", parte_entera, parte_decimal);
-    } else {
-        sprintf(buffer, "%d.%d", parte_entera, parte_decimal);
-    }
+void DHT22_init(void){
+TRISAbits.TRISA0 = 0;
+PORTAbits.RA0 = 1;
 }
 
-int main(void)
+uint8_t DHT22_read(float *dht_temperatura, float *dht_humedad){
+uint8_t bits[5];
+uint8_t i,j=0;
+
+PORTAbits.RA0 = 0;
+_delay((unsigned long)((18)*(20000000/4000.0)));
+
+PORTAbits.RA0 = 1;
+_delay((unsigned long)((40)*(20000000/4000000.0)));
+
+TRISAbits.TRISA0 = 1;
+
+if(PORTAbits.RA0){
+TRISAbits.TRISA0 = 0;
+PORTAbits.RA0 = 1;
+return 0;
+}
+_delay((unsigned long)((80)*(20000000/4000000.0)));
+
+if(!PORTAbits.RA0){
+TRISAbits.TRISA0 = 0;
+PORTAbits.RA0 = 1;
+return 0;
+}
+_delay((unsigned long)((80)*(20000000/4000000.0)));
+
+for (j=0; j<5; j++)
 {
-    float tem, hum;
-    uint8_t intentos = 0;
+uint8_t result=0;
+for (i=0; i<8; i++)
+{
+while (!PORTAbits.RA0);
+_delay((unsigned long)((35)*(20000000/4000000.0)));
+if (PORTAbits.RA0)
+result |= (1<<(7-i));
 
+while(PORTAbits.RA0);
+}
+bits[j] = result;
+}
 
-    ANSEL = 0x00;
-    ANSELH = 0x00;
+TRISAbits.TRISA0 = 0;
+PORTAbits.RA0 = 1;
 
+if ((uint8_t)(bits[0] + bits[1] + bits[2] + bits[3]) == bits[4])
+{
+uint16_t rawhumidity = bits[0]<<8 | bits[1];
+uint16_t rawtemperature = bits[2]<<8 | bits[3];
 
-    I2C_Init_Master(0x80);
-    _delay((unsigned long)((100)*(20000000/4000.0)));
-
-    Lcd_Init();
-    _delay((unsigned long)((50)*(20000000/4000.0)));
-
-
-    DHT22_init();
-
-    Lcd_Set_Cursor(2,1);
-    Lcd_Write_String(" Hold on...");
-    _delay((unsigned long)((2000)*(20000000/4000.0)));
-
-    while(1) {
-        if(DHT22_read(&hum, &tem)) {
-
-            intentos = 0;
-
-            float_to_string_dht22(tem, buffer_tem);
-            float_to_string_dht22(hum, buffer_hum);
-
-            Lcd_Clear();
-            _delay((unsigned long)((2)*(20000000/4000.0)));
-
-
-            Lcd_Set_Cursor(1, 1);
-            _delay((unsigned long)((50)*(20000000/4000000.0)));
-            Lcd_Write_String("Temp: ");
-            Lcd_Write_String(buffer_tem);
-            Lcd_Write_Char(' ');
-            Lcd_Write_Char('C');
-
-
-            Lcd_Set_Cursor(1, 2);
-            _delay((unsigned long)((50)*(20000000/4000000.0)));
-            Lcd_Write_String("Hum : ");
-            Lcd_Write_String(buffer_hum);
-            Lcd_Write_Char(' ');
-            Lcd_Write_Char('%');
-
-        } else {
-
-            intentos++;
-
-            Lcd_Clear();
-            Lcd_Set_Cursor(1,1);
-            Lcd_Write_String(" Error DHT22");
-            Lcd_Set_Cursor(2,2);
-
-            if(intentos < 3) {
-                Lcd_Write_String(" Reintentando..");
-            } else {
-                Lcd_Write_String(" Check conexion");
-            }
-        }
-
-
-        _delay((unsigned long)((2500)*(20000000/4000.0)));
-    }
-
-    return 0;
+if (rawtemperature & 0x8000){
+*dht_temperatura = (float)((rawtemperature & 0x7fff) / 10.0) * -1.0;
+}else{
+*dht_temperatura = (float)(rawtemperature)/10.0;
+}
+*dht_humedad = (float)(rawhumidity)/10.0;
+return 1;
+}
+return 0;
 }
