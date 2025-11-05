@@ -1,23 +1,8 @@
-/*============================================================================
- * Licencia:
- * Autor:         Nahuel Espinosa
- * Fecha:         20/10/2019 (Corregido para timing correcto en PIC16F887 @ 20MHz)
- *===========================================================================*/
-/** @file
- * @brief    Contiene las definiciones para el módulo DHT11
- * 
- * Aquí se encuentra la implementación de funciones, los defines, macros, 
- * datos internos y externos, declaraciones y definiciones de funciones
- * internas y definiciones de funciones externas
- */
 
-/*==================[inclusiones]============================================*/
+
 #include <xc.h>
 #include "dht11.h"
 
-/*==================[definiciones y macros]==================================*/
-// Timer0: Fosc/4 = 5MHz, sin prescaler = 0.2us por tick
-// Timeout de 255 ticks = 51us (suficiente para detectar errores)
 #define DHT11_TIMEOUT        (255)    
 #define DHT11_DATA_SIZE      (5)
 
@@ -30,23 +15,13 @@
 #define dht11_GPIO_High()    TRIS_DHT11 = 1;
 #define dht11_GPIO_Read()    PIN_DHT11
 
-// Timer0: prescaler 1:4 para mejor resolución
-// Con prescaler 1:4: tick = 0.8us
 #define dht11_TMR_Reset()    TMR0 = 0
 #define dht11_TMR_Read()     TMR0
 #define dht11_TMR_Config()   OPTION_REGbits.T0CS = 0; OPTION_REGbits.PSA = 0; OPTION_REGbits.PS = 0b001;
 
-/*==================[definiciones de datos internos]=========================*/
 static uint8_t dht11_byte[DHT11_DATA_SIZE];
 static uint8_t dht11_aux;
 
-/*==================[definiciones de funciones internas]=====================*/
-/**
- * @brief       Lee un byte enviado por el módulo DHT11
- * @return      1 si la recepción fue correcta
- *              0 si hubo timeout
- * @note        Guarda el resultado en una variable global auxiliar (dht11_aux)
- */
 static uint8_t dht11_read_byte() {
     uint8_t i;
     uint8_t timer_val;

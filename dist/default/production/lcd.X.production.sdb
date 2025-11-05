@@ -49,11 +49,11 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"50 C:\Users\jhona\MPLABXProjects\lcd.X\dht11.c
+"25 C:\Users\jhona\MPLABXProjects\lcd.X\dht11.c
 [v _dht11_read_byte dht11_read_byte `(uc  1 s 1 dht11_read_byte ]
-"92
+"67
 [v _dht11_config dht11_config `(v  1 e 1 0 ]
-"104
+"79
 [v _dht11_read dht11_read `(uc  1 e 1 0 ]
 "23 C:\Users\jhona\MPLABXProjects\lcd.X\ds1307.c
 [v _bcd_to_dec bcd_to_dec `(uc  1 s 1 bcd_to_dec ]
@@ -99,7 +99,7 @@
 [v _Lcd_Clear Lcd_Clear `(v  1 e 1 0 ]
 "59 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h
 [v _TMR0 TMR0 `VEuc  1 e 1 @1 ]
-[s S274 . 1 `uc 1 RA0 1 0 :1:0 
+[s S271 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -109,9 +109,9 @@
 `uc 1 RA7 1 0 :1:7 
 ]
 "183
-[u S283 . 1 `S274 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES283  1 e 1 @5 ]
-[s S180 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[u S280 . 1 `S271 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES280  1 e 1 @5 ]
+[s S177 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSPIF 1 0 :1:3 
@@ -120,13 +120,13 @@
 `uc 1 ADIF 1 0 :1:6 
 ]
 "553
-[u S188 . 1 `S180 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES188  1 e 1 @12 ]
+[u S185 . 1 `S177 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES185  1 e 1 @12 ]
 "843
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
 "850
 [v _SSPCON SSPCON `VEuc  1 e 1 @20 ]
-[s S316 . 1 `uc 1 PS 1 0 :3:0 
+[s S313 . 1 `uc 1 PS 1 0 :3:0 
 `uc 1 PSA 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
 `uc 1 T0CS 1 0 :1:5 
@@ -134,13 +134,13 @@
 `uc 1 nRBPU 1 0 :1:7 
 ]
 "1366
-[s S323 . 1 `uc 1 PS0 1 0 :1:0 
+[s S320 . 1 `uc 1 PS0 1 0 :1:0 
 `uc 1 PS1 1 0 :1:1 
 `uc 1 PS2 1 0 :1:2 
 ]
-[u S327 . 1 `S316 1 . 1 0 `S323 1 . 1 0 ]
-[v _OPTION_REGbits OPTION_REGbits `VES327  1 e 1 @129 ]
-[s S295 . 1 `uc 1 TRISA0 1 0 :1:0 
+[u S324 . 1 `S313 1 . 1 0 `S320 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES324  1 e 1 @129 ]
+[s S292 . 1 `uc 1 TRISA0 1 0 :1:0 
 `uc 1 TRISA1 1 0 :1:1 
 `uc 1 TRISA2 1 0 :1:2 
 `uc 1 TRISA3 1 0 :1:3 
@@ -150,9 +150,9 @@
 `uc 1 TRISA7 1 0 :1:7 
 ]
 "1433
-[u S304 . 1 `S295 1 . 1 0 ]
-[v _TRISAbits TRISAbits `VES304  1 e 1 @133 ]
-[s S134 . 1 `uc 1 TRISC0 1 0 :1:0 
+[u S301 . 1 `S292 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES301  1 e 1 @133 ]
+[s S131 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -162,11 +162,11 @@
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "1557
-[u S143 . 1 `S134 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES143  1 e 1 @135 ]
+[u S140 . 1 `S131 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES140  1 e 1 @135 ]
 "1979
 [v _SSPCON2 SSPCON2 `VEuc  1 e 1 @145 ]
-[s S159 . 1 `uc 1 SEN 1 0 :1:0 
+[s S156 . 1 `uc 1 SEN 1 0 :1:0 
 `uc 1 RSEN 1 0 :1:1 
 `uc 1 PEN 1 0 :1:2 
 `uc 1 RCEN 1 0 :1:3 
@@ -176,8 +176,8 @@
 `uc 1 GCEN 1 0 :1:7 
 ]
 "1996
-[u S168 . 1 `S159 1 . 1 0 ]
-[v _SSPCON2bits SSPCON2bits `VES168  1 e 1 @145 ]
+[u S165 . 1 `S156 1 . 1 0 ]
+[v _SSPCON2bits SSPCON2bits `VES165  1 e 1 @145 ]
 "2048
 [v _SSPADD SSPADD `VEuc  1 e 1 @147 ]
 "2177
@@ -193,20 +193,20 @@
 [v _flags flags `uc  1 s 1 flags ]
 "185
 [v _dbuf dbuf `[32]uc  1 s 32 dbuf ]
-"40 C:\Users\jhona\MPLABXProjects\lcd.X\dht11.c
+"22 C:\Users\jhona\MPLABXProjects\lcd.X\dht11.c
 [v _dht11_byte dht11_byte `[5]uc  1 s 5 dht11_byte ]
-"41
+"23
 [v _dht11_aux dht11_aux `uc  1 s 1 dht11_aux ]
 "30 C:\Users\jhona\MPLABXProjects\lcd.X\lcd.c
 [v _main main `(v  1 e 1 0 ]
 {
-"132
+"116
 [v main@hum_ent hum_ent `i  1 a 2 41 ]
-"133
+"117
 [v main@hum_dec hum_dec `i  1 a 2 35 ]
-"122
+"106
 [v main@temp_ent temp_ent `i  1 a 2 39 ]
-"123
+"107
 [v main@temp_dec temp_dec `i  1 a 2 33 ]
 "35
 [v main@buffer buffer `[17]uc  1 a 17 16 ]
@@ -223,21 +223,21 @@
 [v main@hora hora `uc  1 a 1 45 ]
 "36
 [v main@dht_ok dht_ok `uc  1 a 1 44 ]
-"39
+"38
 [v main@pantalla_actual pantalla_actual `uc  1 a 1 43 ]
-"41
-[v main@contador_dht contador_dht `uc  1 a 1 38 ]
 "40
+[v main@contador_dht contador_dht `uc  1 a 1 38 ]
+"39
 [v main@contador_segundos contador_segundos `uc  1 a 1 37 ]
-"144
+"128
 } 0
 "9 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\nf_sprintf.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
 {
-[u S857 . 2 `*.39uc 1 buffer 2 0 `*.1DCuc 1 source 1 0 ]
+[u S854 . 2 `*.39uc 1 buffer 2 0 `*.1DCuc 1 source 1 0 ]
 "13
-[s S860 _IO_FILE 11 `S857 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
-[v sprintf@f f `S860  1 a 11 54 ]
+[s S857 _IO_FILE 11 `S854 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
+[v sprintf@f f `S857  1 a 11 54 ]
 "12
 [v sprintf@ap ap `[1]*.4v  1 a 1 53 ]
 "9
@@ -250,9 +250,9 @@
 {
 "1820
 [v vfprintf@cfmt cfmt `*.24uc  1 a 1 43 ]
-[s S892 _IO_FILE 0 ]
+[s S889 _IO_FILE 0 ]
 "1817
-[v vfprintf@fp fp `*.39S892  1 p 2 39 ]
+[v vfprintf@fp fp `*.39S889  1 p 2 39 ]
 [v vfprintf@fmt fmt `*.24DCuc  1 p 1 41 ]
 [v vfprintf@ap ap `*.4*.4v  1 p 1 42 ]
 "1840
@@ -260,16 +260,16 @@
 "1177
 [v _vfpfcnvrt vfpfcnvrt `(v  1 s 1 vfpfcnvrt ]
 {
-[u S916 . 4 `i 1 sint 2 0 `ui 1 uint 2 0 `d 1 f 4 0 ]
+[u S913 . 4 `i 1 sint 2 0 `ui 1 uint 2 0 `d 1 f 4 0 ]
 "1188
-[v vfpfcnvrt@convarg convarg `S916  1 a 4 33 ]
+[v vfpfcnvrt@convarg convarg `S913  1 a 4 33 ]
 "1179
 [v vfpfcnvrt@cp cp `*.24uc  1 a 1 38 ]
 "1180
 [v vfpfcnvrt@done done `a  1 a 1 37 ]
-[s S892 _IO_FILE 0 ]
+[s S889 _IO_FILE 0 ]
 "1177
-[v vfpfcnvrt@fp fp `*.39S892  1 p 2 27 ]
+[v vfpfcnvrt@fp fp `*.39S889  1 p 2 27 ]
 [v vfpfcnvrt@fmt fmt `*.4*.24uc  1 p 1 29 ]
 [v vfpfcnvrt@ap ap `*.4*.4v  1 p 1 30 ]
 "1814
@@ -306,9 +306,9 @@
 [v dtoa@s s `uc  1 a 1 24 ]
 "520
 [v dtoa@p p `a  1 a 1 21 ]
-[s S892 _IO_FILE 0 ]
+[s S889 _IO_FILE 0 ]
 "513
-[v dtoa@fp fp `*.39S892  1 p 2 15 ]
+[v dtoa@fp fp `*.39S889  1 p 2 15 ]
 [v dtoa@d d `i  1 p 2 17 ]
 "583
 } 0
@@ -317,9 +317,9 @@
 {
 "195
 [v pad@i i `i  1 a 2 13 ]
-[s S892 _IO_FILE 0 ]
+[s S889 _IO_FILE 0 ]
 "193
-[v pad@fp fp `*.39S892  1 p 2 8 ]
+[v pad@fp fp `*.39S889  1 p 2 8 ]
 [v pad@buf buf `*.5uc  1 p 1 10 ]
 [v pad@p p `i  1 p 2 11 ]
 "226
@@ -333,18 +333,18 @@
 [v fputs@c c `uc  1 a 1 5 ]
 "8
 [v fputs@s s `*.5DCuc  1 p 1 0 ]
-[u S857 . 2 `*.39uc 1 buffer 2 0 `*.1DCuc 1 source 1 0 ]
-[s S860 _IO_FILE 11 `S857 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
-[v fputs@fp fp `*.39S860  1 p 2 1 ]
+[u S854 . 2 `*.39uc 1 buffer 2 0 `*.1DCuc 1 source 1 0 ]
+[s S857 _IO_FILE 11 `S854 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
+[v fputs@fp fp `*.39S857  1 p 2 1 ]
 "19
 } 0
 "8 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\nf_fputc.c
 [v _fputc fputc `(i  1 e 2 0 ]
 {
 [v fputc@c c `i  1 p 2 0 ]
-[u S857 . 2 `*.39uc 1 buffer 2 0 `*.1DCuc 1 source 1 0 ]
-[s S860 _IO_FILE 11 `S857 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
-[v fputc@fp fp `*.39S860  1 p 2 2 ]
+[u S854 . 2 `*.39uc 1 buffer 2 0 `*.1DCuc 1 source 1 0 ]
+[s S857 _IO_FILE 11 `S854 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
+[v fputc@fp fp `*.39S857  1 p 2 2 ]
 "24
 } 0
 "7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\putch.c
@@ -482,26 +482,26 @@
 {
 "54
 } 0
-"104 C:\Users\jhona\MPLABXProjects\lcd.X\dht11.c
+"79 C:\Users\jhona\MPLABXProjects\lcd.X\dht11.c
 [v _dht11_read dht11_read `(uc  1 e 1 0 ]
 {
-"105
+"80
 [v dht11_read@i i `uc  1 a 1 57 ]
-"106
+"81
 [v dht11_read@checksum checksum `uc  1 a 1 56 ]
-"104
+"79
 [v dht11_read@phum phum `*.4f  1 p 1 46 ]
 [v dht11_read@ptemp ptemp `*.4f  1 p 1 47 ]
-"159
+"134
 } 0
-"50
+"25
 [v _dht11_read_byte dht11_read_byte `(uc  1 s 1 dht11_read_byte ]
 {
-"51
+"26
 [v dht11_read_byte@i i `uc  1 a 1 1 ]
-"52
+"27
 [v dht11_read_byte@timer_val timer_val `uc  1 a 1 0 ]
-"85
+"60
 } 0
 "10 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
@@ -538,10 +538,10 @@
 [v ___fldiv@b b `d  1 p 4 4 ]
 "185
 } 0
-"92 C:\Users\jhona\MPLABXProjects\lcd.X\dht11.c
+"67 C:\Users\jhona\MPLABXProjects\lcd.X\dht11.c
 [v _dht11_config dht11_config `(v  1 e 1 0 ]
 {
-"95
+"70
 } 0
 "43 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\fltol.c
 [v ___fltol __fltol `(l  1 e 4 0 ]
@@ -579,17 +579,17 @@
 "8 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S710 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S707 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S715 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
-[u S718 . 4 `l 1 i 4 0 `d 1 f 4 0 `S710 1 fAsBytes 4 0 `S715 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S718  1 a 4 74 ]
+[s S712 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
+[u S715 . 4 `l 1 i 4 0 `d 1 f 4 0 `S707 1 fAsBytes 4 0 `S712 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S715  1 a 4 74 ]
 "12
 [v ___flmul@grs grs `ul  1 a 4 68 ]
-[s S787 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[s S784 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S790 . 2 `s 1 i 2 0 `us 1 n 2 0 `S787 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S790  1 a 2 78 ]
+[u S787 . 2 `s 1 i 2 0 `us 1 n 2 0 `S784 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S787  1 a 2 78 ]
 "10
 [v ___flmul@bexp bexp `uc  1 a 1 73 ]
 "11

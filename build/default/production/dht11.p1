@@ -277,296 +277,296 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3546
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 3546: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
-"40 dht11.c
-[; ;dht11.c: 40: static uint8_t dht11_byte[(5)];
+"22 dht11.c
+[; ;dht11.c: 22: static uint8_t dht11_byte[(5)];
 [v _dht11_byte `uc ~T0 @X0 -> 5 `i s ]
-"41
-[; ;dht11.c: 41: static uint8_t dht11_aux;
+"23
+[; ;dht11.c: 23: static uint8_t dht11_aux;
 [v _dht11_aux `uc ~T0 @X0 1 s ]
-"50
-[; ;dht11.c: 50: static uint8_t dht11_read_byte() {
+"25
+[; ;dht11.c: 25: static uint8_t dht11_read_byte() {
 [v _dht11_read_byte `(uc ~T0 @X0 1 sf ]
 {
 [e :U _dht11_read_byte ]
 [f ]
-"51
-[; ;dht11.c: 51:     uint8_t i;
+"26
+[; ;dht11.c: 26:     uint8_t i;
 [v _i `uc ~T0 @X0 1 a ]
-"52
-[; ;dht11.c: 52:     uint8_t timer_val;
+"27
+[; ;dht11.c: 27:     uint8_t timer_val;
 [v _timer_val `uc ~T0 @X0 1 a ]
-"53
-[; ;dht11.c: 53:     dht11_aux = 0;
+"28
+[; ;dht11.c: 28:     dht11_aux = 0;
 [e = _dht11_aux -> -> 0 `i `uc ]
-"56
-[; ;dht11.c: 56:     for(i = 0; i < 8; i++) {
+"31
+[; ;dht11.c: 31:     for(i = 0; i < 8; i++) {
 {
 [e = _i -> -> 0 `i `uc ]
 [e $ < -> _i `i -> 8 `i 143  ]
 [e $U 144  ]
 [e :U 143 ]
 {
-"58
-[; ;dht11.c: 58:         TMR0 = 0;
+"33
+[; ;dht11.c: 33:         TMR0 = 0;
 [e = _TMR0 -> -> 0 `i `uc ]
-"59
-[; ;dht11.c: 59:         while(!PORTAbits.RA0) {
+"34
+[; ;dht11.c: 34:         while(!PORTAbits.RA0) {
 [e $U 146  ]
 [e :U 147 ]
 {
-"60
-[; ;dht11.c: 60:             if(TMR0 > (255)) return 0;
+"35
+[; ;dht11.c: 35:             if(TMR0 > (255)) return 0;
 [e $ ! > -> _TMR0 `i -> 255 `i 149  ]
 [e ) -> -> 0 `i `uc ]
 [e $UE 142  ]
 [e :U 149 ]
-"61
-[; ;dht11.c: 61:         }
+"36
+[; ;dht11.c: 36:         }
 }
 [e :U 146 ]
-"59
-[; ;dht11.c: 59:         while(!PORTAbits.RA0) {
+"34
+[; ;dht11.c: 34:         while(!PORTAbits.RA0) {
 [e $ ! != -> . . _PORTAbits 0 0 `i -> 0 `i 147  ]
 [e :U 148 ]
-"66
-[; ;dht11.c: 66:         TMR0 = 0;
+"41
+[; ;dht11.c: 41:         TMR0 = 0;
 [e = _TMR0 -> -> 0 `i `uc ]
-"67
-[; ;dht11.c: 67:         while(PORTAbits.RA0) {
+"42
+[; ;dht11.c: 42:         while(PORTAbits.RA0) {
 [e $U 150  ]
 [e :U 151 ]
 {
-"68
-[; ;dht11.c: 68:             if(TMR0 > (255)) return 0;
+"43
+[; ;dht11.c: 43:             if(TMR0 > (255)) return 0;
 [e $ ! > -> _TMR0 `i -> 255 `i 153  ]
 [e ) -> -> 0 `i `uc ]
 [e $UE 142  ]
 [e :U 153 ]
-"69
-[; ;dht11.c: 69:         }
+"44
+[; ;dht11.c: 44:         }
 }
 [e :U 150 ]
-"67
-[; ;dht11.c: 67:         while(PORTAbits.RA0) {
+"42
+[; ;dht11.c: 42:         while(PORTAbits.RA0) {
 [e $ != -> . . _PORTAbits 0 0 `i -> 0 `i 151  ]
 [e :U 152 ]
-"71
-[; ;dht11.c: 71:         timer_val = TMR0;
+"46
+[; ;dht11.c: 46:         timer_val = TMR0;
 [e = _timer_val _TMR0 ]
-"74
-[; ;dht11.c: 74:         dht11_aux <<= 1;
+"49
+[; ;dht11.c: 49:         dht11_aux <<= 1;
 [e =<< _dht11_aux -> -> 1 `i `uc ]
-"80
-[; ;dht11.c: 80:         if(timer_val > 50) {
+"55
+[; ;dht11.c: 55:         if(timer_val > 50) {
 [e $ ! > -> _timer_val `i -> 50 `i 154  ]
 {
-"81
-[; ;dht11.c: 81:             dht11_aux |= 0x01;
+"56
+[; ;dht11.c: 56:             dht11_aux |= 0x01;
 [e =| _dht11_aux -> -> 1 `i `uc ]
-"82
-[; ;dht11.c: 82:         }
+"57
+[; ;dht11.c: 57:         }
 }
 [e :U 154 ]
-"83
-[; ;dht11.c: 83:     }
+"58
+[; ;dht11.c: 58:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
 [e $ < -> _i `i -> 8 `i 143  ]
 [e :U 144 ]
 }
-"84
-[; ;dht11.c: 84:     return 1;
+"59
+[; ;dht11.c: 59:     return 1;
 [e ) -> -> 1 `i `uc ]
 [e $UE 142  ]
-"85
-[; ;dht11.c: 85: }
+"60
+[; ;dht11.c: 60: }
 [e :UE 142 ]
 }
-"92
-[; ;dht11.c: 92: void dht11_config(void) {
+"67
+[; ;dht11.c: 67: void dht11_config(void) {
 [v _dht11_config `(v ~T0 @X0 1 ef ]
 {
 [e :U _dht11_config ]
 [f ]
-"93
-[; ;dht11.c: 93:     TRISAbits.TRISA0 = 1;;
+"68
+[; ;dht11.c: 68:     TRISAbits.TRISA0 = 1;;
 [e = . . _TRISAbits 0 0 -> -> 1 `i `uc ]
-"94
-[; ;dht11.c: 94:     OPTION_REGbits.T0CS = 0; OPTION_REGbits.PSA = 0; OPTION_REGbits.PS = 0b001;;
+"69
+[; ;dht11.c: 69:     OPTION_REGbits.T0CS = 0; OPTION_REGbits.PSA = 0; OPTION_REGbits.PS = 0b001;;
 [e = . . _OPTION_REGbits 0 3 -> -> 0 `i `uc ]
 [e = . . _OPTION_REGbits 0 1 -> -> 0 `i `uc ]
 [e = . . _OPTION_REGbits 0 0 -> -> 1 `i `uc ]
-"95
-[; ;dht11.c: 95: }
+"70
+[; ;dht11.c: 70: }
 [e :UE 155 ]
 }
-"104
-[; ;dht11.c: 104: uint8_t dht11_read(float *phum, float *ptemp) {
+"79
+[; ;dht11.c: 79: uint8_t dht11_read(float *phum, float *ptemp) {
 [v _dht11_read `(uc ~T0 @X0 1 ef2`*f`*f ]
 {
 [e :U _dht11_read ]
 [v _phum `*f ~T0 @X0 1 r1 ]
 [v _ptemp `*f ~T0 @X0 1 r2 ]
 [f ]
-"105
-[; ;dht11.c: 105:     uint8_t i;
+"80
+[; ;dht11.c: 80:     uint8_t i;
 [v _i `uc ~T0 @X0 1 a ]
-"106
-[; ;dht11.c: 106:     uint8_t checksum;
+"81
+[; ;dht11.c: 81:     uint8_t checksum;
 [v _checksum `uc ~T0 @X0 1 a ]
-"109
-[; ;dht11.c: 109:     PORTAbits.RA0 = 0; TRISAbits.TRISA0 = 0;;
+"84
+[; ;dht11.c: 84:     PORTAbits.RA0 = 0; TRISAbits.TRISA0 = 0;;
 [e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
 [e = . . _TRISAbits 0 0 -> -> 0 `i `uc ]
-"110
-[; ;dht11.c: 110:     _delay((unsigned long)((20)*((20000000L)/4000.0)));
+"85
+[; ;dht11.c: 85:     _delay((unsigned long)((20)*((20000000L)/4000.0)));
 [e ( __delay (1 -> * -> -> 20 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-"113
-[; ;dht11.c: 113:     TRISAbits.TRISA0 = 1;;
+"88
+[; ;dht11.c: 88:     TRISAbits.TRISA0 = 1;;
 [e = . . _TRISAbits 0 0 -> -> 1 `i `uc ]
-"114
-[; ;dht11.c: 114:     _delay((unsigned long)((30)*((20000000L)/4000000.0)));
+"89
+[; ;dht11.c: 89:     _delay((unsigned long)((30)*((20000000L)/4000000.0)));
 [e ( __delay (1 -> * -> -> 30 `i `d / -> -> 20000000 `l `d .4000000.0 `ul ]
-"117
-[; ;dht11.c: 117:     TMR0 = 0;
+"92
+[; ;dht11.c: 92:     TMR0 = 0;
 [e = _TMR0 -> -> 0 `i `uc ]
-"118
-[; ;dht11.c: 118:     while(PORTAbits.RA0) {
+"93
+[; ;dht11.c: 93:     while(PORTAbits.RA0) {
 [e $U 157  ]
 [e :U 158 ]
 {
-"119
-[; ;dht11.c: 119:         if(TMR0 > (255)) {
+"94
+[; ;dht11.c: 94:         if(TMR0 > (255)) {
 [e $ ! > -> _TMR0 `i -> 255 `i 160  ]
 {
-"120
-[; ;dht11.c: 120:             return 0;
+"95
+[; ;dht11.c: 95:             return 0;
 [e ) -> -> 0 `i `uc ]
 [e $UE 156  ]
-"121
-[; ;dht11.c: 121:         }
+"96
+[; ;dht11.c: 96:         }
 }
 [e :U 160 ]
-"122
-[; ;dht11.c: 122:     }
+"97
+[; ;dht11.c: 97:     }
 }
 [e :U 157 ]
-"118
-[; ;dht11.c: 118:     while(PORTAbits.RA0) {
+"93
+[; ;dht11.c: 93:     while(PORTAbits.RA0) {
 [e $ != -> . . _PORTAbits 0 0 `i -> 0 `i 158  ]
 [e :U 159 ]
-"125
-[; ;dht11.c: 125:     TMR0 = 0;
+"100
+[; ;dht11.c: 100:     TMR0 = 0;
 [e = _TMR0 -> -> 0 `i `uc ]
-"126
-[; ;dht11.c: 126:     while(!PORTAbits.RA0) {
+"101
+[; ;dht11.c: 101:     while(!PORTAbits.RA0) {
 [e $U 161  ]
 [e :U 162 ]
 {
-"127
-[; ;dht11.c: 127:         if(TMR0 > (255)) {
+"102
+[; ;dht11.c: 102:         if(TMR0 > (255)) {
 [e $ ! > -> _TMR0 `i -> 255 `i 164  ]
 {
-"128
-[; ;dht11.c: 128:             return 0;
+"103
+[; ;dht11.c: 103:             return 0;
 [e ) -> -> 0 `i `uc ]
 [e $UE 156  ]
-"129
-[; ;dht11.c: 129:         }
+"104
+[; ;dht11.c: 104:         }
 }
 [e :U 164 ]
-"130
-[; ;dht11.c: 130:     }
+"105
+[; ;dht11.c: 105:     }
 }
 [e :U 161 ]
-"126
-[; ;dht11.c: 126:     while(!PORTAbits.RA0) {
+"101
+[; ;dht11.c: 101:     while(!PORTAbits.RA0) {
 [e $ ! != -> . . _PORTAbits 0 0 `i -> 0 `i 162  ]
 [e :U 163 ]
-"133
-[; ;dht11.c: 133:     TMR0 = 0;
+"108
+[; ;dht11.c: 108:     TMR0 = 0;
 [e = _TMR0 -> -> 0 `i `uc ]
-"134
-[; ;dht11.c: 134:     while(PORTAbits.RA0) {
+"109
+[; ;dht11.c: 109:     while(PORTAbits.RA0) {
 [e $U 165  ]
 [e :U 166 ]
 {
-"135
-[; ;dht11.c: 135:         if(TMR0 > (255)) {
+"110
+[; ;dht11.c: 110:         if(TMR0 > (255)) {
 [e $ ! > -> _TMR0 `i -> 255 `i 168  ]
 {
-"136
-[; ;dht11.c: 136:             return 0;
+"111
+[; ;dht11.c: 111:             return 0;
 [e ) -> -> 0 `i `uc ]
 [e $UE 156  ]
-"137
-[; ;dht11.c: 137:         }
+"112
+[; ;dht11.c: 112:         }
 }
 [e :U 168 ]
-"138
-[; ;dht11.c: 138:     }
+"113
+[; ;dht11.c: 113:     }
 }
 [e :U 165 ]
-"134
-[; ;dht11.c: 134:     while(PORTAbits.RA0) {
+"109
+[; ;dht11.c: 109:     while(PORTAbits.RA0) {
 [e $ != -> . . _PORTAbits 0 0 `i -> 0 `i 166  ]
 [e :U 167 ]
-"141
-[; ;dht11.c: 141:     for(i = 0; i < (5); i++) {
+"116
+[; ;dht11.c: 116:     for(i = 0; i < (5); i++) {
 {
 [e = _i -> -> 0 `i `uc ]
 [e $ < -> _i `i -> 5 `i 169  ]
 [e $U 170  ]
 [e :U 169 ]
 {
-"142
-[; ;dht11.c: 142:         if(!dht11_read_byte()) {
+"117
+[; ;dht11.c: 117:         if(!dht11_read_byte()) {
 [e $ ! ! != -> ( _dht11_read_byte ..  `i -> 0 `i 172  ]
 {
-"143
-[; ;dht11.c: 143:             return 0;
+"118
+[; ;dht11.c: 118:             return 0;
 [e ) -> -> 0 `i `uc ]
 [e $UE 156  ]
-"144
-[; ;dht11.c: 144:         }
+"119
+[; ;dht11.c: 119:         }
 }
 [e :U 172 ]
-"145
-[; ;dht11.c: 145:         dht11_byte[i] = dht11_aux;
+"120
+[; ;dht11.c: 120:         dht11_byte[i] = dht11_aux;
 [e = *U + &U _dht11_byte * -> _i `ux -> -> # *U &U _dht11_byte `ui `ux _dht11_aux ]
-"146
-[; ;dht11.c: 146:     }
+"121
+[; ;dht11.c: 121:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
 [e $ < -> _i `i -> 5 `i 169  ]
 [e :U 170 ]
 }
-"149
-[; ;dht11.c: 149:     checksum = dht11_byte[0] + dht11_byte[1] + dht11_byte[2] + dht11_byte[3];
+"124
+[; ;dht11.c: 124:     checksum = dht11_byte[0] + dht11_byte[1] + dht11_byte[2] + dht11_byte[3];
 [e = _checksum -> + + + -> *U + &U _dht11_byte * -> -> -> 0 `i `ui `ux -> -> # *U &U _dht11_byte `ui `ux `i -> *U + &U _dht11_byte * -> -> -> 1 `i `ui `ux -> -> # *U &U _dht11_byte `ui `ux `i -> *U + &U _dht11_byte * -> -> -> 2 `i `ui `ux -> -> # *U &U _dht11_byte `ui `ux `i -> *U + &U _dht11_byte * -> -> -> 3 `i `ui `ux -> -> # *U &U _dht11_byte `ui `ux `i `uc ]
-"150
-[; ;dht11.c: 150:     if(checksum != dht11_byte[4]) {
+"125
+[; ;dht11.c: 125:     if(checksum != dht11_byte[4]) {
 [e $ ! != -> _checksum `i -> *U + &U _dht11_byte * -> -> -> 4 `i `ui `ux -> -> # *U &U _dht11_byte `ui `ux `i 173  ]
 {
-"151
-[; ;dht11.c: 151:         return 0;
+"126
+[; ;dht11.c: 126:         return 0;
 [e ) -> -> 0 `i `uc ]
 [e $UE 156  ]
-"152
-[; ;dht11.c: 152:     }
+"127
+[; ;dht11.c: 127:     }
 }
 [e :U 173 ]
-"155
-[; ;dht11.c: 155:     *phum = ((float)dht11_byte[0]) + ((float)dht11_byte[1]) / 10.0;
+"130
+[; ;dht11.c: 130:     *phum = ((float)dht11_byte[0]) + ((float)dht11_byte[1]) / 10.0;
 [e = *U _phum -> + -> -> *U + &U _dht11_byte * -> -> -> 0 `i `ui `ux -> -> # *U &U _dht11_byte `ui `ux `f `d / -> -> *U + &U _dht11_byte * -> -> -> 1 `i `ui `ux -> -> # *U &U _dht11_byte `ui `ux `f `d .10.0 `f ]
-"156
-[; ;dht11.c: 156:     *ptemp = ((float)dht11_byte[2]) + ((float)dht11_byte[3]) / 10.0;
+"131
+[; ;dht11.c: 131:     *ptemp = ((float)dht11_byte[2]) + ((float)dht11_byte[3]) / 10.0;
 [e = *U _ptemp -> + -> -> *U + &U _dht11_byte * -> -> -> 2 `i `ui `ux -> -> # *U &U _dht11_byte `ui `ux `f `d / -> -> *U + &U _dht11_byte * -> -> -> 3 `i `ui `ux -> -> # *U &U _dht11_byte `ui `ux `f `d .10.0 `f ]
-"158
-[; ;dht11.c: 158:     return 1;
+"133
+[; ;dht11.c: 133:     return 1;
 [e ) -> -> 1 `i `uc ]
 [e $UE 156  ]
-"159
-[; ;dht11.c: 159: }
+"134
+[; ;dht11.c: 134: }
 [e :UE 156 ]
 }

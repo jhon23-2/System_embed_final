@@ -2890,7 +2890,6 @@ void main(void)
     char buffer[17];
     uint8_t dht_ok = 0;
 
-
     uint8_t pantalla_actual = 0;
     uint8_t contador_segundos = 0;
     uint8_t contador_dht = 0;
@@ -2905,37 +2904,25 @@ void main(void)
     I2C_Init_Master(0x80);
     _delay((unsigned long)((100)*(20000000/4000.0)));
 
-
     Lcd_Init();
     _delay((unsigned long)((100)*(20000000/4000.0)));
 
     Lcd_Clear();
     Lcd_Set_Cursor(1, 1);
-    Lcd_Write_String("  Estacion");
-    Lcd_Set_Cursor(1, 2);
-    Lcd_Write_String(" Meteorologica");
+    Lcd_Write_String("  Hold on...");
     _delay((unsigned long)((2000)*(20000000/4000.0)));
-
 
     dht11_config();
     _delay((unsigned long)((100)*(20000000/4000.0)));
 
-
     ds1307_init();
     _delay((unsigned long)((100)*(20000000/4000.0)));
-
-    Lcd_Clear();
-    Lcd_Set_Cursor(1, 1);
-    Lcd_Write_String(" Configurando");
-    Lcd_Set_Cursor(1, 2);
-    Lcd_Write_String(" sistema...");
 
 
     ds1307_set_time(19, 30, 0);
     ds1307_set_date(29, 10, 25);
 
     _delay((unsigned long)((1500)*(20000000/4000.0)));
-
 
     dht_ok = dht11_read(&hum_f, &temp_f);
 
@@ -2959,9 +2946,7 @@ void main(void)
             _delay((unsigned long)((2)*(20000000/4000.0)));
         }
 
-
         if(pantalla_actual == 0) {
-
             Lcd_Set_Cursor(1, 1);
             sprintf(buffer, "   %02d:%02d:%02d", hora, min, seg);
             Lcd_Write_String(buffer);
@@ -2971,7 +2956,6 @@ void main(void)
             Lcd_Write_String(buffer);
 
         } else {
-
             Lcd_Set_Cursor(1, 1);
             if(dht_ok) {
                 int temp_ent = (int)temp_f;

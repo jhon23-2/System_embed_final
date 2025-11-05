@@ -54,9 +54,7 @@ void main(void)
     
     Lcd_Clear();
     Lcd_Set_Cursor(1, 1);
-    Lcd_Write_String("  Estacion");
-    Lcd_Set_Cursor(1, 2);
-    Lcd_Write_String(" Meteorologica");
+    Lcd_Write_String("  Hold on...");
     __delay_ms(2000);
     
     dht11_config();
@@ -64,12 +62,6 @@ void main(void)
     
     ds1307_init();
     __delay_ms(100);
-    
-    Lcd_Clear();
-    Lcd_Set_Cursor(1, 1);
-    Lcd_Write_String(" Configurando");
-    Lcd_Set_Cursor(1, 2);
-    Lcd_Write_String(" sistema...");
     
    
     ds1307_set_time(19, 30, 0);     // 19:30:00

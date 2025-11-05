@@ -7,7 +7,8 @@
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "dht11.c" 2
-# 15 "dht11.c"
+
+
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2667,16 +2668,16 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 2 3
-# 16 "dht11.c" 2
+# 4 "dht11.c" 2
 # 1 "./dht11.h" 1
 # 22 "./dht11.h"
 void dht11_config (void);
 uint8_t dht11_read (float *phum, float *ptemp);
-# 17 "dht11.c" 2
-# 40 "dht11.c"
+# 5 "dht11.c" 2
+# 22 "dht11.c"
 static uint8_t dht11_byte[(5)];
 static uint8_t dht11_aux;
-# 50 "dht11.c"
+
 static uint8_t dht11_read_byte() {
     uint8_t i;
     uint8_t timer_val;
@@ -2723,7 +2724,7 @@ void dht11_config(void) {
     TRISAbits.TRISA0 = 1;;
     OPTION_REGbits.T0CS = 0; OPTION_REGbits.PSA = 0; OPTION_REGbits.PS = 0b001;;
 }
-# 104 "dht11.c"
+# 79 "dht11.c"
 uint8_t dht11_read(float *phum, float *ptemp) {
     uint8_t i;
     uint8_t checksum;
