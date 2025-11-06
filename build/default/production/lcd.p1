@@ -1,4 +1,55 @@
 Version 4.0 HI-TECH Software Intermediate Code
+"4632 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 4632: extern volatile __bit WR __attribute__((address(0xC61)));
+[v _WR `Vb ~T0 @X0 0 e@3169 ]
+"3257
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 3257: extern volatile unsigned char EEADR __attribute__((address(0x10D)));
+[v _EEADR `Vuc ~T0 @X0 0 e@269 ]
+"3250
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 3250: extern volatile unsigned char EEDAT __attribute__((address(0x10C)));
+[v _EEDAT `Vuc ~T0 @X0 0 e@268 ]
+"3888
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 3888: extern volatile __bit EEPGD __attribute__((address(0xC67)));
+[v _EEPGD `Vb ~T0 @X0 0 e@3175 ]
+"4635
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 4635: extern volatile __bit WREN __attribute__((address(0xC62)));
+[v _WREN `Vb ~T0 @X0 0 e@3170 ]
+"465
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 465:     struct {
+[s S20 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S20 . RBIF INTF T0IF RBIE INTE T0IE PEIE GIE ]
+"475
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 475:     struct {
+[s S21 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S21 . . TMR0IF . TMR0IE ]
+"464
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 464: typedef union {
+[u S19 `S20 1 `S21 1 ]
+[n S19 . . . ]
+"482
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 482: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
+[v _INTCONbits `VS19 ~T0 @X0 0 e@11 ]
+"3544
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 3544: extern volatile unsigned char EECON2 __attribute__((address(0x18D)));
+[v _EECON2 `Vuc ~T0 @X0 0 e@397 ]
+"4182
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 4182: extern volatile __bit RD __attribute__((address(0xC60)));
+[v _RD `Vb ~T0 @X0 0 e@3168 ]
+"41 lcd.c
+[; ;lcd.c: 41: typedef struct {
+[s S144 `s 1 `s 1 ]
+[n S144 . temperatura humedad ]
+"358 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 358:     struct {
+[s S16 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S16 . RD0 RD1 RD2 RD3 RD4 RD5 RD6 RD7 ]
+"357
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 357: typedef union {
+[u S15 `S16 1 ]
+[n S15 . . ]
+"369
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 369: extern volatile PORTDbits_t PORTDbits __attribute__((address(0x008)));
+[v _PORTDbits `VS15 ~T0 @X0 0 e@8 ]
 "121 C:\Program Files\Microchip\xc8\v3.10\pic\include\c99/stdio.h
 [; ;C:\Program Files\Microchip\xc8\v3.10\pic\include\c99/stdio.h: 121: int sprintf(char *restrict, const char *restrict, ...);
 [v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
@@ -9,6 +60,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3449
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 3449: extern volatile unsigned char ANSELH __attribute__((address(0x189)));
 [v _ANSELH `Vuc ~T0 @X0 0 e@393 ]
+"352
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 352: extern volatile unsigned char PORTD __attribute__((address(0x008)));
+[v _PORTD `Vuc ~T0 @X0 0 e@8 ]
+"1602
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 1602: extern volatile unsigned char TRISD __attribute__((address(0x088)));
+[v _TRISD `Vuc ~T0 @X0 0 e@136 ]
 "24 ./i2c.h
 [; ;./i2c.h: 24: void I2C_Init_Master(unsigned char sp_i2c);
 [v _I2C_Init_Master `(v ~T0 @X0 0 ef1`uc ]
@@ -272,261 +329,819 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 3546: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
 "14 lcd.c
-[; ;lcd.c: 14:         value = -value;
 [p x FOSC  =  HS ]
 "15
-[; ;lcd.c: 15:     }
 [p x WDTE  =  OFF ]
 "16
-[; ;lcd.c: 16: 
-[p x PWRTE  =  ON       ]
+[p x PWRTE  =  ON ]
 "17
-[; ;lcd.c: 17:     parte_entera = (int)value;
 [p x MCLRE  =  ON ]
 "18
-[; ;lcd.c: 18: 
 [p x CP  =  OFF ]
 "19
-[; ;lcd.c: 19: 
 [p x CPD  =  OFF ]
 "20
-[; ;lcd.c: 20:     parte_decimal = (int)((value * 10.0) - (parte_entera * 10));
-[p x BOREN  =  ON       ]
+[p x BOREN  =  ON ]
 "21
-[; ;lcd.c: 21: 
 [p x IESO  =  OFF ]
 "22
-[; ;lcd.c: 22:     if (negativo) {
 [p x FCMEN  =  OFF ]
 "23
-[; ;lcd.c: 23:         sprintf(buffer, "-%d.%d", parte_entera, parte_decimal);
 [p x LVP  =  OFF ]
 "24
-[; ;lcd.c: 24:     } else {
 [p x DEBUG  =  OFF ]
-"29
-[; ;lcd.c: 29: int main(void)
+"47
+[; ;lcd.c: 47: char buffer_tem[16];
 [v _buffer_tem `uc ~T0 @X0 -> 16 `i e ]
-"30
-[; ;lcd.c: 30: {
+"48
+[; ;lcd.c: 48: char buffer_hum[16];
 [v _buffer_hum `uc ~T0 @X0 -> 16 `i e ]
-"32
-[; ;lcd.c: 32:     uint8_t intentos = 0;
+"49
+[; ;lcd.c: 49: uint8_t indice_lectura = 0;
+[v _indice_lectura `uc ~T0 @X0 1 e ]
+[i _indice_lectura
+-> -> 0 `i `uc
+]
+"50
+[; ;lcd.c: 50: uint8_t total_lecturas = 0;
+[v _total_lecturas `uc ~T0 @X0 1 e ]
+[i _total_lecturas
+-> -> 0 `i `uc
+]
+"51
+[; ;lcd.c: 51: uint16_t contador_muestras = 0;
+[v _contador_muestras `us ~T0 @X0 1 e ]
+[i _contador_muestras
+-> -> 0 `i `us
+]
+"54
+[; ;lcd.c: 54: void EEPROM_Write(uint8_t addr, uint8_t data) {
+[v _EEPROM_Write `(v ~T0 @X0 1 ef2`uc`uc ]
+{
+[e :U _EEPROM_Write ]
+[v _addr `uc ~T0 @X0 1 r1 ]
+[v _data `uc ~T0 @X0 1 r2 ]
+[f ]
+"55
+[; ;lcd.c: 55:     while(WR);
+[e $U 146  ]
+[e :U 147 ]
+[e :U 146 ]
+[e $ _WR 147  ]
+[e :U 148 ]
+"56
+[; ;lcd.c: 56:     EEADR = addr;
+[e = _EEADR _addr ]
+"57
+[; ;lcd.c: 57:     EEDAT = data;
+[e = _EEDAT _data ]
+"58
+[; ;lcd.c: 58:     EEPGD = 0;
+[e = _EEPGD -> -> 0 `i `b ]
+"59
+[; ;lcd.c: 59:     WREN = 1;
+[e = _WREN -> -> 1 `i `b ]
+"62
+[; ;lcd.c: 62:     INTCONbits.GIE = 0;
+[e = . . _INTCONbits 0 7 -> -> 0 `i `uc ]
+"63
+[; ;lcd.c: 63:     EECON2 = 0x55;
+[e = _EECON2 -> -> 85 `i `uc ]
+"64
+[; ;lcd.c: 64:     EECON2 = 0xAA;
+[e = _EECON2 -> -> 170 `i `uc ]
+"65
+[; ;lcd.c: 65:     WR = 1;
+[e = _WR -> -> 1 `i `b ]
+"66
+[; ;lcd.c: 66:     INTCONbits.GIE = 1;
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
+"68
+[; ;lcd.c: 68:     while(WR);
+[e $U 149  ]
+[e :U 150 ]
+[e :U 149 ]
+[e $ _WR 150  ]
+[e :U 151 ]
+"69
+[; ;lcd.c: 69:     WREN = 0;
+[e = _WREN -> -> 0 `i `b ]
+"70
+[; ;lcd.c: 70: }
+[e :UE 145 ]
+}
+"72
+[; ;lcd.c: 72: uint8_t EEPROM_Read(uint8_t addr) {
+[v _EEPROM_Read `(uc ~T0 @X0 1 ef1`uc ]
+{
+[e :U _EEPROM_Read ]
+[v _addr `uc ~T0 @X0 1 r1 ]
+[f ]
+"73
+[; ;lcd.c: 73:     EEADR = addr;
+[e = _EEADR _addr ]
+"74
+[; ;lcd.c: 74:     EEPGD = 0;
+[e = _EEPGD -> -> 0 `i `b ]
+"75
+[; ;lcd.c: 75:     RD = 1;
+[e = _RD -> -> 1 `i `b ]
+"76
+[; ;lcd.c: 76:     return EEDAT;
+[e ) _EEDAT ]
+[e $UE 152  ]
+"77
+[; ;lcd.c: 77: }
+[e :UE 152 ]
+}
+"80
+[; ;lcd.c: 80: void guardar_lectura(float temp, float hum) {
+[v _guardar_lectura `(v ~T0 @X0 1 ef2`f`f ]
+{
+[e :U _guardar_lectura ]
+[v _temp `f ~T0 @X0 1 r1 ]
+[v _hum `f ~T0 @X0 1 r2 ]
+[f ]
+"81
+[; ;lcd.c: 81:     uint8_t base_addr = 0x00 + (indice_lectura * 4);
+[v _base_addr `uc ~T0 @X0 1 a ]
+[e = _base_addr -> + -> 0 `i * -> _indice_lectura `i -> 4 `i `uc ]
+"84
+[; ;lcd.c: 84:     int16_t temp_int = (int16_t)(temp * 10.0);
+[v _temp_int `s ~T0 @X0 1 a ]
+[e = _temp_int -> * -> _temp `d .10.0 `s ]
+"85
+[; ;lcd.c: 85:     int16_t hum_int = (int16_t)(hum * 10.0);
+[v _hum_int `s ~T0 @X0 1 a ]
+[e = _hum_int -> * -> _hum `d .10.0 `s ]
+"88
+[; ;lcd.c: 88:     EEPROM_Write(base_addr, (temp_int >> 8) & 0xFF);
+[e ( _EEPROM_Write (2 , _base_addr -> & >> -> _temp_int `i -> 8 `i -> 255 `i `uc ]
+"89
+[; ;lcd.c: 89:     EEPROM_Write(base_addr + 1, temp_int & 0xFF);
+[e ( _EEPROM_Write (2 , -> + -> _base_addr `i -> 1 `i `uc -> & -> _temp_int `i -> 255 `i `uc ]
+"90
+[; ;lcd.c: 90:     EEPROM_Write(base_addr + 2, (hum_int >> 8) & 0xFF);
+[e ( _EEPROM_Write (2 , -> + -> _base_addr `i -> 2 `i `uc -> & >> -> _hum_int `i -> 8 `i -> 255 `i `uc ]
+"91
+[; ;lcd.c: 91:     EEPROM_Write(base_addr + 3, hum_int & 0xFF);
+[e ( _EEPROM_Write (2 , -> + -> _base_addr `i -> 3 `i `uc -> & -> _hum_int `i -> 255 `i `uc ]
+"94
+[; ;lcd.c: 94:     indice_lectura++;
+[e ++ _indice_lectura -> -> 1 `i `uc ]
+"95
+[; ;lcd.c: 95:     if(indice_lectura >= 20) {
+[e $ ! >= -> _indice_lectura `i -> 20 `i 154  ]
+{
+"96
+[; ;lcd.c: 96:         indice_lectura = 0;
+[e = _indice_lectura -> -> 0 `i `uc ]
+"97
+[; ;lcd.c: 97:     }
+}
+[e :U 154 ]
+"100
+[; ;lcd.c: 100:     if(total_lecturas < 20) {
+[e $ ! < -> _total_lecturas `i -> 20 `i 155  ]
+{
+"101
+[; ;lcd.c: 101:         total_lecturas++;
+[e ++ _total_lecturas -> -> 1 `i `uc ]
+"102
+[; ;lcd.c: 102:     }
+}
+[e :U 155 ]
+"103
+[; ;lcd.c: 103: }
+[e :UE 153 ]
+}
+"106
+[; ;lcd.c: 106: Lectura leer_lectura(uint8_t index) {
+[v _leer_lectura `(S144 ~T0 @X0 1 ef1`uc ]
+{
+[e :U _leer_lectura ]
+[v _index `uc ~T0 @X0 1 r1 ]
+[f ]
+"107
+[; ;lcd.c: 107:     Lectura lec;
+[v _lec `S144 ~T0 @X0 1 a ]
+"108
+[; ;lcd.c: 108:     uint8_t base_addr = 0x00 + (index * 4);
+[v _base_addr `uc ~T0 @X0 1 a ]
+[e = _base_addr -> + -> 0 `i * -> _index `i -> 4 `i `uc ]
+"110
+[; ;lcd.c: 110:     int16_t temp_int = (EEPROM_Read(base_addr) << 8) | EEPROM_Read(base_addr + 1);
+[v _temp_int `s ~T0 @X0 1 a ]
+[e = _temp_int -> | << -> ( _EEPROM_Read (1 _base_addr `i -> 8 `i -> ( _EEPROM_Read (1 -> + -> _base_addr `i -> 1 `i `uc `i `s ]
+"111
+[; ;lcd.c: 111:     int16_t hum_int = (EEPROM_Read(base_addr + 2) << 8) | EEPROM_Read(base_addr + 3);
+[v _hum_int `s ~T0 @X0 1 a ]
+[e = _hum_int -> | << -> ( _EEPROM_Read (1 -> + -> _base_addr `i -> 2 `i `uc `i -> 8 `i -> ( _EEPROM_Read (1 -> + -> _base_addr `i -> 3 `i `uc `i `s ]
+"113
+[; ;lcd.c: 113:     lec.temperatura = temp_int;
+[e = . _lec 0 _temp_int ]
+"114
+[; ;lcd.c: 114:     lec.humedad = hum_int;
+[e = . _lec 1 _hum_int ]
+"115
+[; ;lcd.c: 115:     return lec;
+[e ) _lec ]
+[e $UE 156  ]
+"116
+[; ;lcd.c: 116: }
+[e :UE 156 ]
+}
+"120
+[; ;lcd.c: 120: float calcular_promedio_temp(uint8_t ultimas_n) {
+[v _calcular_promedio_temp `(f ~T0 @X0 1 ef1`uc ]
+{
+[e :U _calcular_promedio_temp ]
+[v _ultimas_n `uc ~T0 @X0 1 r1 ]
+[f ]
+"121
+[; ;lcd.c: 121:     if(total_lecturas == 0) return 0.0;
+[e $ ! == -> _total_lecturas `i -> 0 `i 158  ]
+[e ) -> .0.0 `f ]
+[e $UE 157  ]
+[e :U 158 ]
+"123
+[; ;lcd.c: 123:     float suma = 0.0;
+[v _suma `f ~T0 @X0 1 a ]
+[e = _suma -> .0.0 `f ]
+"124
+[; ;lcd.c: 124:     uint8_t n = (ultimas_n < total_lecturas) ? ultimas_n : total_lecturas;
+[v _n `uc ~T0 @X0 1 a ]
+[e = _n -> ? < -> _ultimas_n `i -> _total_lecturas `i : -> _ultimas_n `i -> _total_lecturas `i `uc ]
+"126
+[; ;lcd.c: 126:     for(uint8_t i = 0; i < n; i++) {
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $U 162  ]
+[e :U 159 ]
+{
+"127
+[; ;lcd.c: 127:         Lectura lec = leer_lectura(i);
+[v _lec `S144 ~T0 @X0 1 a ]
+[e = _lec ( _leer_lectura (1 _i ]
+"128
+[; ;lcd.c: 128:         suma += (float)lec.temperatura / 10.0;
+[e =+ _suma -> / -> -> . _lec 0 `f `d .10.0 `f ]
+"129
+[; ;lcd.c: 129:     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e :U 162 ]
+[e $ < -> _i `i -> _n `i 159  ]
+[e :U 160 ]
+}
+"131
+[; ;lcd.c: 131:     return suma / n;
+[e ) / _suma -> -> _n `i `f ]
+[e $UE 157  ]
+"132
+[; ;lcd.c: 132: }
+[e :UE 157 ]
+}
+"135
+[; ;lcd.c: 135: float calcular_tendencia_temp() {
+[v _calcular_tendencia_temp `(f ~T0 @X0 1 ef ]
+{
+[e :U _calcular_tendencia_temp ]
+[f ]
+"136
+[; ;lcd.c: 136:     if(total_lecturas < 3) return 0.0;
+[e $ ! < -> _total_lecturas `i -> 3 `i 164  ]
+[e ) -> .0.0 `f ]
+[e $UE 163  ]
+[e :U 164 ]
+"139
+[; ;lcd.c: 139:     float promedio_reciente = 0.0;
+[v _promedio_reciente `f ~T0 @X0 1 a ]
+[e = _promedio_reciente -> .0.0 `f ]
+"140
+[; ;lcd.c: 140:     float promedio_anterior = 0.0;
+[v _promedio_anterior `f ~T0 @X0 1 a ]
+[e = _promedio_anterior -> .0.0 `f ]
+"142
+[; ;lcd.c: 142:     for(uint8_t i = 0; i < 3 && i < total_lecturas; i++) {
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $U 168  ]
+[e :U 165 ]
+{
+"143
+[; ;lcd.c: 143:         Lectura lec = leer_lectura(i);
+[v _lec `S144 ~T0 @X0 1 a ]
+[e = _lec ( _leer_lectura (1 _i ]
+"144
+[; ;lcd.c: 144:         promedio_reciente += (float)lec.temperatura / 10.0;
+[e =+ _promedio_reciente -> / -> -> . _lec 0 `f `d .10.0 `f ]
+"145
+[; ;lcd.c: 145:     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e :U 168 ]
+[e $ && < -> _i `i -> 3 `i < -> _i `i -> _total_lecturas `i 165  ]
+[e :U 166 ]
+}
+"146
+[; ;lcd.c: 146:     promedio_reciente /= 3.0;
+[e =/ _promedio_reciente .3.0 ]
+"148
+[; ;lcd.c: 148:     if(total_lecturas >= 6) {
+[e $ ! >= -> _total_lecturas `i -> 6 `i 169  ]
+{
+"149
+[; ;lcd.c: 149:         for(uint8_t i = 3; i < 6; i++) {
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 3 `i `uc ]
+[e $ < -> _i `i -> 6 `i 170  ]
+[e $U 171  ]
+[e :U 170 ]
+{
+"150
+[; ;lcd.c: 150:             Lectura lec = leer_lectura(i);
+[v _lec `S144 ~T0 @X0 1 a ]
+[e = _lec ( _leer_lectura (1 _i ]
+"151
+[; ;lcd.c: 151:             promedio_anterior += (float)lec.temperatura / 10.0;
+[e =+ _promedio_anterior -> / -> -> . _lec 0 `f `d .10.0 `f ]
+"152
+[; ;lcd.c: 152:         }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 6 `i 170  ]
+[e :U 171 ]
+}
+"153
+[; ;lcd.c: 153:         promedio_anterior /= 3.0;
+[e =/ _promedio_anterior .3.0 ]
+"154
+[; ;lcd.c: 154:         return promedio_reciente - promedio_anterior;
+[e ) - _promedio_reciente _promedio_anterior ]
+[e $UE 163  ]
+"155
+[; ;lcd.c: 155:     }
+}
+[e :U 169 ]
+"157
+[; ;lcd.c: 157:     return 0.0;
+[e ) -> .0.0 `f ]
+[e $UE 163  ]
+"158
+[; ;lcd.c: 158: }
+[e :UE 163 ]
+}
+"161
+[; ;lcd.c: 161: float pronostico_temperatura() {
+[v _pronostico_temperatura `(f ~T0 @X0 1 ef ]
+{
+[e :U _pronostico_temperatura ]
+[f ]
+"162
+[; ;lcd.c: 162:     if(total_lecturas < 5) {
+[e $ ! < -> _total_lecturas `i -> 5 `i 174  ]
+{
+"163
+[; ;lcd.c: 163:         return calcular_promedio_temp(total_lecturas);
+[e ) ( _calcular_promedio_temp (1 _total_lecturas ]
+[e $UE 173  ]
+"164
+[; ;lcd.c: 164:     }
+}
+[e :U 174 ]
+"165
+[; ;lcd.c: 165:     return calcular_promedio_temp(5);
+[e ) ( _calcular_promedio_temp (1 -> -> 5 `i `uc ]
+[e $UE 173  ]
+"166
+[; ;lcd.c: 166: }
+[e :UE 173 ]
+}
+"169
+[; ;lcd.c: 169: void actualizar_leds(float temp, float hum, float tendencia) {
+[v _actualizar_leds `(v ~T0 @X0 1 ef3`f`f`f ]
+{
+[e :U _actualizar_leds ]
+[v _temp `f ~T0 @X0 1 r1 ]
+[v _hum `f ~T0 @X0 1 r2 ]
+[v _tendencia `f ~T0 @X0 1 r3 ]
+[f ]
+"171
+[; ;lcd.c: 171:     PORTDbits.RD0 = (temp < 20.0) ? 1 : 0;
+[e = . . _PORTDbits 0 0 -> ? < -> _temp `d .20.0 : -> 1 `i -> 0 `i `uc ]
+"172
+[; ;lcd.c: 172:     PORTDbits.RD1 = (temp >= 20.0 && temp <= 28.0) ? 1 : 0;
+[e = . . _PORTDbits 0 1 -> ? && >= -> _temp `d .20.0 <= -> _temp `d .28.0 : -> 1 `i -> 0 `i `uc ]
+"173
+[; ;lcd.c: 173:     PORTDbits.RD2 = (temp > 28.0) ? 1 : 0;
+[e = . . _PORTDbits 0 2 -> ? > -> _temp `d .28.0 : -> 1 `i -> 0 `i `uc ]
+"176
+[; ;lcd.c: 176:     PORTDbits.RD3 = (hum < 40.0) ? 1 : 0;
+[e = . . _PORTDbits 0 3 -> ? < -> _hum `d .40.0 : -> 1 `i -> 0 `i `uc ]
+"177
+[; ;lcd.c: 177:     PORTDbits.RD4 = (hum > 70.0) ? 1 : 0;
+[e = . . _PORTDbits 0 4 -> ? > -> _hum `d .70.0 : -> 1 `i -> 0 `i `uc ]
+"181
+[; ;lcd.c: 181:     if(tendencia > 1.0 || tendencia < -1.0) {
+[e $ ! || > -> _tendencia `d .1.0 < -> _tendencia `d -U .1.0 176  ]
+{
+"182
+[; ;lcd.c: 182:         PORTDbits.RD5 = 1;
+[e = . . _PORTDbits 0 5 -> -> 1 `i `uc ]
+"183
+[; ;lcd.c: 183:     } else {
+}
+[e $U 177  ]
+[e :U 176 ]
+{
+"184
+[; ;lcd.c: 184:         PORTDbits.RD5 = 0;
+[e = . . _PORTDbits 0 5 -> -> 0 `i `uc ]
+"185
+[; ;lcd.c: 185:     }
+}
+[e :U 177 ]
+"186
+[; ;lcd.c: 186: }
+[e :UE 175 ]
+}
+"189
+[; ;lcd.c: 189: void float_to_string_dht22(float value, char* buffer) {
 [v _float_to_string_dht22 `(v ~T0 @X0 1 ef2`f`*uc ]
 {
 [e :U _float_to_string_dht22 ]
 [v _value `f ~T0 @X0 1 r1 ]
 [v _buffer `*uc ~T0 @X0 1 r2 ]
 [f ]
-"33
-[; ;lcd.c: 33: 
+"190
+[; ;lcd.c: 190:     int parte_entera;
 [v _parte_entera `i ~T0 @X0 1 a ]
-"34
-[; ;lcd.c: 34: 
+"191
+[; ;lcd.c: 191:     int parte_decimal;
 [v _parte_decimal `i ~T0 @X0 1 a ]
-"37
-[; ;lcd.c: 37: 
+"193
+[; ;lcd.c: 193:     _Bool negativo = 0;
 [v _negativo `a ~T0 @X0 1 a ]
 [e = _negativo -> -> 0 `i `a ]
-"38
-[; ;lcd.c: 38: 
-[e $ ! < _value -> -> 0 `i `f 145  ]
+"194
+[; ;lcd.c: 194:     if (value < 0) {
+[e $ ! < _value -> -> 0 `i `f 179  ]
 {
-"39
-[; ;lcd.c: 39:     I2C_Init_Master(0x80);
+"195
+[; ;lcd.c: 195:         negativo = 1;
 [e = _negativo -> -> 1 `i `a ]
-"40
-[; ;lcd.c: 40:     _delay((unsigned long)((100)*(20000000/4000.0)));
+"196
+[; ;lcd.c: 196:         value = -value;
 [e = _value -U _value ]
-"41
-[; ;lcd.c: 41: 
+"197
+[; ;lcd.c: 197:     }
 }
-[e :U 145 ]
-"43
-[; ;lcd.c: 43:     _delay((unsigned long)((50)*(20000000/4000.0)));
+[e :U 179 ]
+"199
+[; ;lcd.c: 199:     parte_entera = (int)value;
 [e = _parte_entera -> _value `i ]
-"46
-[; ;lcd.c: 46:     DHT22_init();
+"200
+[; ;lcd.c: 200:     parte_decimal = (int)((value * 10.0) - (parte_entera * 10));
 [e = _parte_decimal -> - * -> _value `d .10.0 -> * _parte_entera -> 10 `i `d `i ]
-"48
-[; ;lcd.c: 48:     Lcd_Set_Cursor(2,1);
-[e $ ! != -> _negativo `i -> 0 `i 146  ]
+"202
+[; ;lcd.c: 202:     if (negativo) {
+[e $ ! != -> _negativo `i -> 0 `i 180  ]
 {
-"49
-[; ;lcd.c: 49:     Lcd_Write_String(" Hold on...");
+"203
+[; ;lcd.c: 203:         sprintf(buffer, "-%d.%d", parte_entera, parte_decimal);
 [e ( _sprintf (1 , , (. , _buffer :s 1C _parte_entera _parte_decimal ]
-"50
-[; ;lcd.c: 50:     _delay((unsigned long)((2000)*(20000000/4000.0)));
+"204
+[; ;lcd.c: 204:     } else {
 }
-[e $U 147  ]
-[e :U 146 ]
+[e $U 181  ]
+[e :U 180 ]
 {
-"51
-[; ;lcd.c: 51: 
+"205
+[; ;lcd.c: 205:         sprintf(buffer, "%d.%d", parte_entera, parte_decimal);
 [e ( _sprintf (1 , , (. , _buffer :s 2C _parte_entera _parte_decimal ]
-"52
-[; ;lcd.c: 52:     while(1) {
+"206
+[; ;lcd.c: 206:     }
 }
-[e :U 147 ]
-"53
-[; ;lcd.c: 53:         if(DHT22_read(&hum, &tem)) {
-[e :UE 144 ]
+[e :U 181 ]
+"207
+[; ;lcd.c: 207: }
+[e :UE 178 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"55
-[; ;lcd.c: 55:             intentos = 0;
+"210
+[; ;lcd.c: 210: int main(void)
 [v _main `(i ~T0 @X0 1 ef ]
-"56
-[; ;lcd.c: 56: 
+"211
+[; ;lcd.c: 211: {
 {
 [e :U _main ]
 [f ]
-"57
-[; ;lcd.c: 57:             float_to_string_dht22(tem, buffer_tem);
+"212
+[; ;lcd.c: 212:     float tem, hum;
 [v _tem `f ~T0 @X0 1 a ]
 [v _hum `f ~T0 @X0 1 a ]
-"58
-[; ;lcd.c: 58:             float_to_string_dht22(hum, buffer_hum);
+"213
+[; ;lcd.c: 213:     uint8_t intentos = 0;
 [v _intentos `uc ~T0 @X0 1 a ]
 [e = _intentos -> -> 0 `i `uc ]
-"61
-[; ;lcd.c: 61:             _delay((unsigned long)((2)*(20000000/4000.0)));
+"214
+[; ;lcd.c: 214:     float tendencia = 0.0;
+[v _tendencia `f ~T0 @X0 1 a ]
+[e = _tendencia -> .0.0 `f ]
+"215
+[; ;lcd.c: 215:     float pronostico = 0.0;
+[v _pronostico `f ~T0 @X0 1 a ]
+[e = _pronostico -> .0.0 `f ]
+"216
+[; ;lcd.c: 216:     _Bool mostrar_pronostico = 0;
+[v _mostrar_pronostico `a ~T0 @X0 1 a ]
+[e = _mostrar_pronostico -> -> 0 `i `a ]
+"219
+[; ;lcd.c: 219:     ANSEL = 0x00;
 [e = _ANSEL -> -> 0 `i `uc ]
-"62
-[; ;lcd.c: 62: 
+"220
+[; ;lcd.c: 220:     ANSELH = 0x00;
 [e = _ANSELH -> -> 0 `i `uc ]
-"65
-[; ;lcd.c: 65:             _delay((unsigned long)((50)*(20000000/4000000.0)));
+"223
+[; ;lcd.c: 223:     PORTD = 0x00;
+[e = _PORTD -> -> 0 `i `uc ]
+"224
+[; ;lcd.c: 224:     TRISD = 0x00;
+[e = _TRISD -> -> 0 `i `uc ]
+"227
+[; ;lcd.c: 227:     I2C_Init_Master(0x80);
 [e ( _I2C_Init_Master (1 -> -> 128 `i `uc ]
-"66
-[; ;lcd.c: 66:             Lcd_Write_String("Temp: ");
+"228
+[; ;lcd.c: 228:     _delay((unsigned long)((100)*(20000000/4000.0)));
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-"68
-[; ;lcd.c: 68:             Lcd_Write_Char(' ');
+"230
+[; ;lcd.c: 230:     Lcd_Init();
 [e ( _Lcd_Init ..  ]
-"69
-[; ;lcd.c: 69:             Lcd_Write_Char('C');
+"231
+[; ;lcd.c: 231:     _delay((unsigned long)((50)*(20000000/4000.0)));
 [e ( __delay (1 -> * -> -> 50 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-"72
-[; ;lcd.c: 72:             Lcd_Set_Cursor(1, 2);
+"234
+[; ;lcd.c: 234:     DHT22_init();
 [e ( _DHT22_init ..  ]
-"74
-[; ;lcd.c: 74:             Lcd_Write_String("Hum : ");
-[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
-"75
-[; ;lcd.c: 75:             Lcd_Write_String(buffer_hum);
+"237
+[; ;lcd.c: 237:     Lcd_Set_Cursor(1,1);
+[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+"238
+[; ;lcd.c: 238:     Lcd_Write_String("Sistema DHT22");
 [e ( _Lcd_Write_String (1 :s 3C ]
-"76
-[; ;lcd.c: 76:             Lcd_Write_Char(' ');
-[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-"78
-[; ;lcd.c: 78: 
-[e :U 150 ]
-{
-"79
-[; ;lcd.c: 79:         } else {
-[e $ ! != -> ( _DHT22_read (2 , &U _hum &U _tem `i -> 0 `i 152  ]
-{
-"81
-[; ;lcd.c: 81:             intentos++;
-[e = _intentos -> -> 0 `i `uc ]
-"83
-[; ;lcd.c: 83:             Lcd_Clear();
-[e ( _float_to_string_dht22 (2 , _tem &U _buffer_tem ]
-"84
-[; ;lcd.c: 84:             Lcd_Set_Cursor(1,1);
-[e ( _float_to_string_dht22 (2 , _hum &U _buffer_hum ]
-"86
-[; ;lcd.c: 86:             Lcd_Set_Cursor(2,2);
-[e ( _Lcd_Clear ..  ]
-"87
-[; ;lcd.c: 87: 
-[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-"90
-[; ;lcd.c: 90:             } else {
-[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-"91
-[; ;lcd.c: 91:                 Lcd_Write_String(" Check conexion");
-[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 20000000 `l `d .4000000.0 `ul ]
-"92
-[; ;lcd.c: 92:             }
-[e ( _Lcd_Write_String (1 :s 4C ]
-"93
-[; ;lcd.c: 93:         }
-[e ( _Lcd_Write_String (1 -> &U _buffer_tem `*Cuc ]
-"94
-[; ;lcd.c: 94: 
-[e ( _Lcd_Write_Char (1 -> -> 32 `ui `uc ]
-"95
-[; ;lcd.c: 95: 
-[e ( _Lcd_Write_Char (1 -> -> 67 `ui `uc ]
-"98
-[; ;lcd.c: 98: 
+"239
+[; ;lcd.c: 239:     Lcd_Set_Cursor(1,2);
 [e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
-"99
-[; ;lcd.c: 99:     return 0;
-[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 20000000 `l `d .4000000.0 `ul ]
-"100
-[; ;lcd.c: 100: }
-[e ( _Lcd_Write_String (1 :s 5C ]
-"101
-[e ( _Lcd_Write_String (1 -> &U _buffer_hum `*Cuc ]
-"102
-[e ( _Lcd_Write_Char (1 -> -> 32 `ui `uc ]
-"103
-[e ( _Lcd_Write_Char (1 -> -> 37 `ui `uc ]
-"105
-}
-[e $U 153  ]
-[e :U 152 ]
+"240
+[; ;lcd.c: 240:     Lcd_Write_String("Iniciando...");
+[e ( _Lcd_Write_String (1 :s 4C ]
+"241
+[; ;lcd.c: 241:     _delay((unsigned long)((2000)*(20000000/4000.0)));
+[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"243
+[; ;lcd.c: 243:     while(1) {
+[e :U 184 ]
 {
-"107
-[e ++ _intentos -> -> 1 `i `uc ]
-"109
+"244
+[; ;lcd.c: 244:         if(DHT22_read(&hum, &tem)) {
+[e $ ! != -> ( _DHT22_read (2 , &U _hum &U _tem `i -> 0 `i 186  ]
+{
+"246
+[; ;lcd.c: 246:             intentos = 0;
+[e = _intentos -> -> 0 `i `uc ]
+"247
+[; ;lcd.c: 247:             contador_muestras++;
+[e ++ _contador_muestras -> -> 1 `i `us ]
+"251
+[; ;lcd.c: 251:             if(contador_muestras >= 10) {
+[e $ ! >= -> _contador_muestras `ui -> -> 10 `i `ui 187  ]
+{
+"252
+[; ;lcd.c: 252:                 guardar_lectura(tem, hum);
+[e ( _guardar_lectura (2 , _tem _hum ]
+"253
+[; ;lcd.c: 253:                 contador_muestras = 0;
+[e = _contador_muestras -> -> 0 `i `us ]
+"256
+[; ;lcd.c: 256:                 tendencia = calcular_tendencia_temp();
+[e = _tendencia ( _calcular_tendencia_temp ..  ]
+"257
+[; ;lcd.c: 257:                 pronostico = pronostico_temperatura();
+[e = _pronostico ( _pronostico_temperatura ..  ]
+"258
+[; ;lcd.c: 258:             }
+}
+[e :U 187 ]
+"261
+[; ;lcd.c: 261:             float_to_string_dht22(tem, buffer_tem);
+[e ( _float_to_string_dht22 (2 , _tem &U _buffer_tem ]
+"262
+[; ;lcd.c: 262:             float_to_string_dht22(hum, buffer_hum);
+[e ( _float_to_string_dht22 (2 , _hum &U _buffer_hum ]
+"265
+[; ;lcd.c: 265:             actualizar_leds(tem, hum, tendencia);
+[e ( _actualizar_leds (3 , , _tem _hum _tendencia ]
+"268
+[; ;lcd.c: 268:             Lcd_Clear();
 [e ( _Lcd_Clear ..  ]
-"110
+"269
+[; ;lcd.c: 269:             _delay((unsigned long)((2)*(20000000/4000.0)));
+[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"271
+[; ;lcd.c: 271:             if(!mostrar_pronostico) {
+[e $ ! ! != -> _mostrar_pronostico `i -> 0 `i 188  ]
+{
+"273
+[; ;lcd.c: 273:                 Lcd_Set_Cursor(1, 1);
 [e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-"111
+"274
+[; ;lcd.c: 274:                 Lcd_Write_String("T:");
+[e ( _Lcd_Write_String (1 :s 5C ]
+"275
+[; ;lcd.c: 275:                 Lcd_Write_String(buffer_tem);
+[e ( _Lcd_Write_String (1 -> &U _buffer_tem `*Cuc ]
+"276
+[; ;lcd.c: 276:                 Lcd_Write_String("C H:");
 [e ( _Lcd_Write_String (1 :s 6C ]
-"112
-[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 2 `i `uc ]
-"114
-[e $ ! < -> _intentos `i -> 3 `i 154  ]
+"277
+[; ;lcd.c: 277:                 Lcd_Write_String(buffer_hum);
+[e ( _Lcd_Write_String (1 -> &U _buffer_hum `*Cuc ]
+"278
+[; ;lcd.c: 278:                 Lcd_Write_Char('%');
+[e ( _Lcd_Write_Char (1 -> -> 37 `ui `uc ]
+"280
+[; ;lcd.c: 280:                 Lcd_Set_Cursor(1, 2);
+[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
+"281
+[; ;lcd.c: 281:                 sprintf(buffer_tem, "Hist:%d Tend:", total_lecturas);
+[e ( _sprintf (1 , (. , &U _buffer_tem :s 7C -> _total_lecturas `i ]
+"282
+[; ;lcd.c: 282:                 Lcd_Write_String(buffer_tem);
+[e ( _Lcd_Write_String (1 -> &U _buffer_tem `*Cuc ]
+"283
+[; ;lcd.c: 283:                 if(tendencia > 0.5) {
+[e $ ! > -> _tendencia `d .0.5 189  ]
 {
-"115
-[e ( _Lcd_Write_String (1 :s 7C ]
-"116
+"284
+[; ;lcd.c: 284:                     Lcd_Write_Char('^');
+[e ( _Lcd_Write_Char (1 -> -> 94 `ui `uc ]
+"285
+[; ;lcd.c: 285:                 } else if(tendencia < -0.5) {
 }
-[e $U 155  ]
-[e :U 154 ]
+[e $U 190  ]
+[e :U 189 ]
+[e $ ! < -> _tendencia `d -U .0.5 191  ]
 {
-"117
+"286
+[; ;lcd.c: 286:                     Lcd_Write_Char('v');
+[e ( _Lcd_Write_Char (1 -> -> 118 `ui `uc ]
+"287
+[; ;lcd.c: 287:                 } else {
+}
+[e $U 192  ]
+[e :U 191 ]
+{
+"288
+[; ;lcd.c: 288:                     Lcd_Write_Char('-');
+[e ( _Lcd_Write_Char (1 -> -> 45 `ui `uc ]
+"289
+[; ;lcd.c: 289:                 }
+}
+[e :U 192 ]
+[e :U 190 ]
+"290
+[; ;lcd.c: 290:             } else {
+}
+[e $U 193  ]
+[e :U 188 ]
+{
+"292
+[; ;lcd.c: 292:                 Lcd_Set_Cursor(1, 1);
+[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+"293
+[; ;lcd.c: 293:                 Lcd_Write_String("PRONOSTICO:");
 [e ( _Lcd_Write_String (1 :s 8C ]
-"118
+"295
+[; ;lcd.c: 295:                 Lcd_Set_Cursor(1, 2);
+[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
+"296
+[; ;lcd.c: 296:                 float_to_string_dht22(pronostico, buffer_tem);
+[e ( _float_to_string_dht22 (2 , _pronostico &U _buffer_tem ]
+"297
+[; ;lcd.c: 297:                 Lcd_Write_String("Temp:");
+[e ( _Lcd_Write_String (1 :s 9C ]
+"298
+[; ;lcd.c: 298:                 Lcd_Write_String(buffer_tem);
+[e ( _Lcd_Write_String (1 -> &U _buffer_tem `*Cuc ]
+"299
+[; ;lcd.c: 299:                 Lcd_Write_Char('C');
+[e ( _Lcd_Write_Char (1 -> -> 67 `ui `uc ]
+"300
+[; ;lcd.c: 300:             }
 }
-[e :U 155 ]
-"119
+[e :U 193 ]
+"303
+[; ;lcd.c: 303:             static uint8_t ciclos = 0;
+[v F1832 `uc ~T0 @X0 1 s ciclos ]
+[i F1832
+-> -> 0 `i `uc
+]
+"304
+[; ;lcd.c: 304:             ciclos++;
+[e ++ F1832 -> -> 1 `i `uc ]
+"305
+[; ;lcd.c: 305:             if(ciclos >= 3) {
+[e $ ! >= -> F1832 `i -> 3 `i 194  ]
+{
+"306
+[; ;lcd.c: 306:                 mostrar_pronostico = !mostrar_pronostico;
+[e = _mostrar_pronostico -> -> ! != -> _mostrar_pronostico `i -> 0 `i `i `a ]
+"307
+[; ;lcd.c: 307:                 ciclos = 0;
+[e = F1832 -> -> 0 `i `uc ]
+"308
+[; ;lcd.c: 308:             }
 }
-[e :U 153 ]
-"122
+[e :U 194 ]
+"310
+[; ;lcd.c: 310:         } else {
+}
+[e $U 195  ]
+[e :U 186 ]
+{
+"312
+[; ;lcd.c: 312:             intentos++;
+[e ++ _intentos -> -> 1 `i `uc ]
+"314
+[; ;lcd.c: 314:             Lcd_Clear();
+[e ( _Lcd_Clear ..  ]
+"315
+[; ;lcd.c: 315:             Lcd_Set_Cursor(1,1);
+[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+"316
+[; ;lcd.c: 316:             Lcd_Write_String(" Error DHT22");
+[e ( _Lcd_Write_String (1 :s 10C ]
+"317
+[; ;lcd.c: 317:             Lcd_Set_Cursor(2,2);
+[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 2 `i `uc ]
+"319
+[; ;lcd.c: 319:             if(intentos < 3) {
+[e $ ! < -> _intentos `i -> 3 `i 196  ]
+{
+"320
+[; ;lcd.c: 320:                 Lcd_Write_String(" Reintentando..");
+[e ( _Lcd_Write_String (1 :s 11C ]
+"321
+[; ;lcd.c: 321:             } else {
+}
+[e $U 197  ]
+[e :U 196 ]
+{
+"322
+[; ;lcd.c: 322:                 Lcd_Write_String(" Check conexion");
+[e ( _Lcd_Write_String (1 :s 12C ]
+"323
+[; ;lcd.c: 323:             }
+}
+[e :U 197 ]
+"326
+[; ;lcd.c: 326:             PORTD = 0x00;
+[e = _PORTD -> -> 0 `i `uc ]
+"327
+[; ;lcd.c: 327:         }
+}
+[e :U 195 ]
+"330
+[; ;lcd.c: 330:         _delay((unsigned long)((2500)*(20000000/4000.0)));
 [e ( __delay (1 -> * -> -> 2500 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-"123
+"331
+[; ;lcd.c: 331:     }
 }
-[e :U 149 ]
-[e $U 150  ]
-[e :U 151 ]
-"125
+[e :U 183 ]
+[e $U 184  ]
+[e :U 185 ]
+"333
+[; ;lcd.c: 333:     return 0;
 [e ) -> 0 `i ]
-[e $UE 148  ]
-"126
-[e :UE 148 ]
+[e $UE 182  ]
+"334
+[; ;lcd.c: 334: }
+[e :UE 182 ]
 }
 [p f _sprintf 8388736 ]
-[a 8C 32 67 104 101 99 107 32 99 111 110 101 120 105 111 110 0 ]
+[a 12C 32 67 104 101 99 107 32 99 111 110 101 120 105 111 110 0 ]
 [a 1C 45 37 100 46 37 100 0 ]
 [a 2C 37 100 46 37 100 0 ]
-[a 6C 32 69 114 114 111 114 32 68 72 84 50 50 0 ]
-[a 7C 32 82 101 105 110 116 101 110 116 97 110 100 111 46 46 0 ]
-[a 3C 32 72 111 108 100 32 111 110 46 46 46 0 ]
-[a 4C 84 101 109 112 58 32 0 ]
-[a 5C 72 117 109 32 58 32 0 ]
+[a 9C 84 101 109 112 58 0 ]
+[a 7C 72 105 115 116 58 37 100 32 84 101 110 100 58 0 ]
+[a 5C 84 58 0 ]
+[a 8C 80 82 79 78 79 83 84 73 67 79 58 0 ]
+[a 6C 67 32 72 58 0 ]
+[a 10C 32 69 114 114 111 114 32 68 72 84 50 50 0 ]
+[a 3C 83 105 115 116 101 109 97 32 68 72 84 50 50 0 ]
+[a 11C 32 82 101 105 110 116 101 110 116 97 110 100 111 46 46 0 ]
+[a 4C 73 110 105 99 105 97 110 100 111 46 46 46 0 ]

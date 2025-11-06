@@ -2871,17 +2871,158 @@ uint8_t DHT22_read(float *dht_temperatura, float *dht_humedad);
 #pragma config FCMEN = OFF
 #pragma config LVP = OFF
 #pragma config DEBUG = OFF
-
-
+# 41 "lcd.c"
+typedef struct {
+    int16_t temperatura;
+    int16_t humedad;
+} Lectura;
 
 
 char buffer_tem[16];
 char buffer_hum[16];
+uint8_t indice_lectura = 0;
+uint8_t total_lecturas = 0;
+uint16_t contador_muestras = 0;
+
+
+void EEPROM_Write(uint8_t addr, uint8_t data) {
+    while(WR);
+    EEADR = addr;
+    EEDAT = data;
+    EEPGD = 0;
+    WREN = 1;
+
+
+    INTCONbits.GIE = 0;
+    EECON2 = 0x55;
+    EECON2 = 0xAA;
+    WR = 1;
+    INTCONbits.GIE = 1;
+
+    while(WR);
+    WREN = 0;
+}
+
+uint8_t EEPROM_Read(uint8_t addr) {
+    EEADR = addr;
+    EEPGD = 0;
+    RD = 1;
+    return EEDAT;
+}
+
+
+void guardar_lectura(float temp, float hum) {
+    uint8_t base_addr = 0x00 + (indice_lectura * 4);
+
+
+    int16_t temp_int = (int16_t)(temp * 10.0);
+    int16_t hum_int = (int16_t)(hum * 10.0);
+
+
+    EEPROM_Write(base_addr, (temp_int >> 8) & 0xFF);
+    EEPROM_Write(base_addr + 1, temp_int & 0xFF);
+    EEPROM_Write(base_addr + 2, (hum_int >> 8) & 0xFF);
+    EEPROM_Write(base_addr + 3, hum_int & 0xFF);
+
+
+    indice_lectura++;
+    if(indice_lectura >= 20) {
+        indice_lectura = 0;
+    }
+
+
+    if(total_lecturas < 20) {
+        total_lecturas++;
+    }
+}
+
+
+Lectura leer_lectura(uint8_t index) {
+    Lectura lec;
+    uint8_t base_addr = 0x00 + (index * 4);
+
+    int16_t temp_int = (EEPROM_Read(base_addr) << 8) | EEPROM_Read(base_addr + 1);
+    int16_t hum_int = (EEPROM_Read(base_addr + 2) << 8) | EEPROM_Read(base_addr + 3);
+
+    lec.temperatura = temp_int;
+    lec.humedad = hum_int;
+    return lec;
+}
+
+
+
+float calcular_promedio_temp(uint8_t ultimas_n) {
+    if(total_lecturas == 0) return 0.0;
+
+    float suma = 0.0;
+    uint8_t n = (ultimas_n < total_lecturas) ? ultimas_n : total_lecturas;
+
+    for(uint8_t i = 0; i < n; i++) {
+        Lectura lec = leer_lectura(i);
+        suma += (float)lec.temperatura / 10.0;
+    }
+
+    return suma / n;
+}
+
+
+float calcular_tendencia_temp() {
+    if(total_lecturas < 3) return 0.0;
+
+
+    float promedio_reciente = 0.0;
+    float promedio_anterior = 0.0;
+
+    for(uint8_t i = 0; i < 3 && i < total_lecturas; i++) {
+        Lectura lec = leer_lectura(i);
+        promedio_reciente += (float)lec.temperatura / 10.0;
+    }
+    promedio_reciente /= 3.0;
+
+    if(total_lecturas >= 6) {
+        for(uint8_t i = 3; i < 6; i++) {
+            Lectura lec = leer_lectura(i);
+            promedio_anterior += (float)lec.temperatura / 10.0;
+        }
+        promedio_anterior /= 3.0;
+        return promedio_reciente - promedio_anterior;
+    }
+
+    return 0.0;
+}
+
+
+float pronostico_temperatura() {
+    if(total_lecturas < 5) {
+        return calcular_promedio_temp(total_lecturas);
+    }
+    return calcular_promedio_temp(5);
+}
+
+
+void actualizar_leds(float temp, float hum, float tendencia) {
+
+    PORTDbits.RD0 = (temp < 20.0) ? 1 : 0;
+    PORTDbits.RD1 = (temp >= 20.0 && temp <= 28.0) ? 1 : 0;
+    PORTDbits.RD2 = (temp > 28.0) ? 1 : 0;
+
+
+    PORTDbits.RD3 = (hum < 40.0) ? 1 : 0;
+    PORTDbits.RD4 = (hum > 70.0) ? 1 : 0;
+
+
+
+    if(tendencia > 1.0 || tendencia < -1.0) {
+        PORTDbits.RD5 = 1;
+    } else {
+        PORTDbits.RD5 = 0;
+    }
+}
+
 
 void float_to_string_dht22(float value, char* buffer) {
     int parte_entera;
     int parte_decimal;
-
 
     _Bool negativo = 0;
     if (value < 0) {
@@ -2890,8 +3031,6 @@ void float_to_string_dht22(float value, char* buffer) {
     }
 
     parte_entera = (int)value;
-
-
     parte_decimal = (int)((value * 10.0) - (parte_entera * 10));
 
     if (negativo) {
@@ -2901,14 +3040,22 @@ void float_to_string_dht22(float value, char* buffer) {
     }
 }
 
+
 int main(void)
 {
     float tem, hum;
     uint8_t intentos = 0;
+    float tendencia = 0.0;
+    float pronostico = 0.0;
+    _Bool mostrar_pronostico = 0;
 
 
     ANSEL = 0x00;
     ANSELH = 0x00;
+
+
+    PORTD = 0x00;
+    TRISD = 0x00;
 
 
     I2C_Init_Master(0x80);
@@ -2920,36 +3067,79 @@ int main(void)
 
     DHT22_init();
 
-    Lcd_Set_Cursor(2,1);
-    Lcd_Write_String(" Hold on...");
+
+    Lcd_Set_Cursor(1,1);
+    Lcd_Write_String("Sistema DHT22");
+    Lcd_Set_Cursor(1,2);
+    Lcd_Write_String("Iniciando...");
     _delay((unsigned long)((2000)*(20000000/4000.0)));
 
     while(1) {
         if(DHT22_read(&hum, &tem)) {
 
             intentos = 0;
+            contador_muestras++;
+
+
+
+            if(contador_muestras >= 10) {
+                guardar_lectura(tem, hum);
+                contador_muestras = 0;
+
+
+                tendencia = calcular_tendencia_temp();
+                pronostico = pronostico_temperatura();
+            }
+
 
             float_to_string_dht22(tem, buffer_tem);
             float_to_string_dht22(hum, buffer_hum);
 
+
+            actualizar_leds(tem, hum, tendencia);
+
+
             Lcd_Clear();
             _delay((unsigned long)((2)*(20000000/4000.0)));
 
+            if(!mostrar_pronostico) {
 
-            Lcd_Set_Cursor(1, 1);
-            _delay((unsigned long)((50)*(20000000/4000000.0)));
-            Lcd_Write_String("Temp: ");
-            Lcd_Write_String(buffer_tem);
-            Lcd_Write_Char(' ');
-            Lcd_Write_Char('C');
+                Lcd_Set_Cursor(1, 1);
+                Lcd_Write_String("T:");
+                Lcd_Write_String(buffer_tem);
+                Lcd_Write_String("C H:");
+                Lcd_Write_String(buffer_hum);
+                Lcd_Write_Char('%');
+
+                Lcd_Set_Cursor(1, 2);
+                sprintf(buffer_tem, "Hist:%d Tend:", total_lecturas);
+                Lcd_Write_String(buffer_tem);
+                if(tendencia > 0.5) {
+                    Lcd_Write_Char('^');
+                } else if(tendencia < -0.5) {
+                    Lcd_Write_Char('v');
+                } else {
+                    Lcd_Write_Char('-');
+                }
+            } else {
+
+                Lcd_Set_Cursor(1, 1);
+                Lcd_Write_String("PRONOSTICO:");
+
+                Lcd_Set_Cursor(1, 2);
+                float_to_string_dht22(pronostico, buffer_tem);
+                Lcd_Write_String("Temp:");
+                Lcd_Write_String(buffer_tem);
+                Lcd_Write_Char('C');
+            }
 
 
-            Lcd_Set_Cursor(1, 2);
-            _delay((unsigned long)((50)*(20000000/4000000.0)));
-            Lcd_Write_String("Hum : ");
-            Lcd_Write_String(buffer_hum);
-            Lcd_Write_Char(' ');
-            Lcd_Write_Char('%');
+            static uint8_t ciclos = 0;
+            ciclos++;
+            if(ciclos >= 3) {
+                mostrar_pronostico = !mostrar_pronostico;
+                ciclos = 0;
+            }
 
         } else {
 
@@ -2965,6 +3155,9 @@ int main(void)
             } else {
                 Lcd_Write_String(" Check conexion");
             }
+
+
+            PORTD = 0x00;
         }
 
 
