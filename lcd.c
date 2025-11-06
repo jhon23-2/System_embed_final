@@ -33,8 +33,7 @@
 #define LED_HUMEDO   PORTDbits.RD4  // Hum > 70%
 #define LED_PRONOSTICO PORTDbits.RD5  // Parpadea según tendencia
 
-// ========== CONFIGURACIÓN EEPROM ==========
-#define MAX_LECTURAS 20  // Guardamos hasta 20 lecturas históricas
+#define MAX_LECTURAS 20  
 #define EEPROM_BASE_ADDR 0x00
 
 // Estructura para guardar en EEPROM (4 bytes por lectura)
