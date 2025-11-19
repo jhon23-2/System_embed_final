@@ -1,6 +1,10 @@
 # 🌡️ Sistema de Monitoreo de Temperatura y Humedad con DHT11
 
-Proyecto de sistema embebido para monitoreo ambiental con capacidades de almacenamiento histórico, análisis estadístico y pronóstico básico.
+Proyecto de sistema embebido para monitoreo ambiental con capacidades de almacenamiento histórico, análisis estadístico y pronóstico básico. 
+
+
+## 🤳🏻 Video de la construccion del projecto 
+https://youtube.com/shorts/HQp-2f3r9rk?si=98KYtfUuPrRD6HQo
 
 ## 📋 Descripción
 
