@@ -6,6 +6,9 @@ Proyecto de sistema embebido para monitoreo ambiental con capacidades de almacen
 ## 🤳🏻 Video de la construccion del projecto 
 https://youtube.com/shorts/HQp-2f3r9rk?si=98KYtfUuPrRD6HQo
 
+## pequenia web page para pronostico de datos (publicada en free hosting cluade ai)
+https://claude.ai/public/artifacts/b35ab07f-ad27-401e-9ef2-dfb409936e18
+
 ## 📋 Descripción
 
 Sistema de adquisición y análisis de datos ambientales basado en microcontrolador PIC16F887 que:
